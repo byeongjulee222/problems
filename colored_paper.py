@@ -11,10 +11,10 @@ while i < N:
         e, f, g, h = map(int, input().split())
         lst2 = [(x, y) for x in range(e, e+g) for y in range(f, f+h)]
 
-        for t in lst1:
-            if t in lst2:
-                del lst1.remove(t)
-        # result = len([x for x in lst1 if x not in lst2])
+        # for t in lst1:
+        #     if t in lst2:
+        #         del lst1.remove(t)
+        result = len([x for x in lst1 if x not in lst2])
     print(result)
 print(len(lst2))
 
