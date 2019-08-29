@@ -1,14 +1,14 @@
-import sys; sys.stdin = open("1974_sudoku.txt", "r")
+import sys; sys.stdin = open("txt/1974_sudoku.txt", "r")
 
 T = int(input())
 for TC in range(1, T+1):
     arr = [list(map(int, input().split())) for _ in range(9)]
-
+    # num_list = [i for i in range(1, 10)]
+    # print(num_list)
     # print(arr)
     cnt = 0
-    SUM_x = 0
-    SUM_y = 0
     for i in range(9):
+        SUM_x = SUM_y = 0
         for j in range(9):
             SUM_x += arr[i][j]
             SUM_y += arr[j][i]
@@ -16,17 +16,20 @@ for TC in range(1, T+1):
             cnt += 1
         if SUM_y == 45:
             cnt += 1
-        print(cnt)
+        # print(cnt)
 
-    SUM_b = 0
     for k in range(0, 7, 3):
         for l in range(0, 7, 3):
+            SUM_b = 0
             for i in range(3):
                 for j in range(3):
                     SUM_b += arr[i+k][j+l]
-                if SUM_b == 45:
-                    cnt += 1
+            if SUM_b == 45:
+                cnt += 1
+                # print(cnt)
+
+    # print(cnt)
     if cnt == 27:
-        print(1)
+        print('#{} 1'.format(TC))
     else:
-        print(0)
+        print('#{} 0'.format(TC))

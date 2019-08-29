@@ -1,10 +1,11 @@
-import sys; sys.stdin = open("LED.txt", "r")
+import sys; sys.stdin = open("txt/LED.txt", "r")
 
 T = int(input())
 # print(T)
 for tc in range(1, T+1):
     N = int(input())
-    arr = list(map(int, input().split()))
+    arr = [0] + list(map(int, input().split()))
+    # arr = [0, 0, 0, 0, 0, 0, 1]
     numbers = [i for i in range(1, N+1)]
     # print(numbers)
     result = [[] for _ in range(1<<N)]
@@ -17,12 +18,14 @@ for tc in range(1, T+1):
     final = []
     for set in result:
         for i in set:
-            for room in range(1, len(arr)+1):
-                if room % i == 0:
-                    if arr[room-1] == 1:
-                        arr[room-1] = 0
-                    elif arr[room-1] == 0:
-                        arr[room-1] = 1
-            if 1 not in arr:
-                final.append(len(set))
+            for room in range(1, len(arr)):
+                if arr[room] == 1:
+                    if room % i == 0:
+                    # if arr[room] == 1:
+                        arr[room] = 0
+                    # elif arr[room] == 0:
+                    #     arr[room] = 1
+            if sum(arr) == 0:
+                final.append(set)
+
     print(final)
