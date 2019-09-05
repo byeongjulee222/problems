@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("369.txt", "r")
+sys.stdin = open("txt/369.txt", "r")
 N = int(input())
 
 num_list = list(map(str, range(1,N+1)))

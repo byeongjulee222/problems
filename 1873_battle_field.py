@@ -1,0 +1,1 @@
+import sys; sys.stdin = open("txt/1873_battle_field.txt", "r")
