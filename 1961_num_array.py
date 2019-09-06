@@ -1,4 +1,4 @@
-import sys; sys.stdin = open("1961_num_array.txt", "r")
+import sys; sys.stdin = open("txt/1961_num_array.txt", "r")
 
 T = int(input())
 for TC in range(1, T+1):

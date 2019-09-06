@@ -12,7 +12,7 @@ for tc in range(1, T+1):
         for j in range(-N//2, N//2+1):
             if abs(i)+abs(j) <= N//2:
                 result.append((i, j))
-    print(result)
+    # print(result)
 
     SUM = 0
     for area in result:
