@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/../algorithm_daily/Additional_1242.py" line="2" />
+    <bookmark url="file://$PROJECT_DIR$/../algorithm_daily/Additional_1242.py" line="41" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b62b0799-1a87-4632-b95e-41a8444f24c2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/aaa.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bj_8979.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1966_arr_num.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1970_easy_change.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1976_time_sum.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1983_grade.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/8016_pyramid.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2805_farming.py" beforeDir="false" afterPath="$PROJECT_DIR$/2805_farming.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,39 +22,39 @@
     <session id="598563166">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
-          <entry key="project.open.time.0" value="3" />
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="4" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="22" />
-          <entry key="txt" value="9" />
+          <entry key="py" value="35" />
+          <entry key="txt" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Python" value="22" />
+          <entry key="PLAIN_TEXT" value="12" />
+          <entry key="Python" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="6802" />
+          <entry key="py" value="10449" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="6802" />
+          <entry key="Python" value="10449" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -78,20 +80,29 @@
         <option value="$PROJECT_DIR$/2805_farming.py" />
         <option value="$PROJECT_DIR$/aaa.py" />
         <option value="$PROJECT_DIR$/Additional_1240.py" />
-        <option value="$PROJECT_DIR$/../algorithm_daily/Additional_1240.py" />
-        <option value="$PROJECT_DIR$/../algorithm_daily/Additional_1242.py" />
         <option value="$PROJECT_DIR$/../algorithm_daily/Start_5185.py" />
         <option value="$PROJECT_DIR$/../algorithm_daily/Start_5186.py" />
         <option value="$PROJECT_DIR$/../algorithm_daily/Searching_5188.py" />
         <option value="$PROJECT_DIR$/../algorithm_daily/Additional_4366.py" />
         <option value="$PROJECT_DIR$/bj_8979.txt" />
         <option value="$PROJECT_DIR$/bj_8979.py" />
+        <option value="$PROJECT_DIR$/../algorithm_daily/Additional_1240.py" />
+        <option value="$PROJECT_DIR$/1976_time_sum.py" />
+        <option value="$PROJECT_DIR$/1970_easy_change.py" />
+        <option value="$PROJECT_DIR$/1966_arr_num.py" />
+        <option value="$PROJECT_DIR$/8016_pyramid.py" />
+        <option value="$PROJECT_DIR$/1983_grade.py" />
+        <option value="$PROJECT_DIR$/../algorithm_daily/16_Searching_String_5252.py" />
+        <option value="$PROJECT_DIR$/Searching_5252.py" />
+        <option value="$PROJECT_DIR$/../algorithm_daily/Searching_5254.py" />
+        <option value="$PROJECT_DIR$/Searching_5254.py" />
+        <option value="$PROJECT_DIR$/../algorithm_daily/Additional_1242.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1074" />
-    <option name="width" value="854" />
+    <option name="x" value="594" />
+    <option name="width" value="1334" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectId" id="1Q5tUFOYcSs1isMFx6Cs4iCen66" />
@@ -103,12 +114,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="problems" type="b2602c69:ProjectViewProjectNode" />
+              <item name="problems" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../algorithm_daily" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -123,7 +144,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Additional_4366">
+  <component name="RunManager" selected="Python.Additional_1242">
+    <configuration name="8016_pyramid" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="problems" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/8016_pyramid.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Additional_1242" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="problems" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -145,7 +187,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Additional_4366" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Searching_5252" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="problems" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -153,11 +195,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../algorithm_daily" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../algorithm_daily/Additional_4366.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Searching_5252.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -166,7 +208,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Searching_5188" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Searching_5254 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="problems" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -174,11 +216,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../algorithm_daily" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../algorithm_daily/Searching_5188.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Searching_5254.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -187,7 +229,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Start_5185" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Searching_5254" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="problems" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -199,28 +241,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../algorithm_daily/Start_5185.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Start_5186" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="problems" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../algorithm_daily" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../algorithm_daily/Start_5186.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../algorithm_daily/Searching_5254.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -230,19 +251,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.8016_pyramid" />
+      <item itemvalue="Python.Searching_5252" />
+      <item itemvalue="Python.Searching_5254" />
+      <item itemvalue="Python.Searching_5254 (1)" />
       <item itemvalue="Python.Additional_1242" />
-      <item itemvalue="Python.Start_5185" />
-      <item itemvalue="Python.Start_5186" />
-      <item itemvalue="Python.Searching_5188" />
-      <item itemvalue="Python.Additional_4366" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Additional_4366" />
-        <item itemvalue="Python.Searching_5188" />
-        <item itemvalue="Python.Start_5186" />
-        <item itemvalue="Python.Start_5185" />
         <item itemvalue="Python.Additional_1242" />
+        <item itemvalue="Python.Searching_5254 (1)" />
+        <item itemvalue="Python.Searching_5254" />
+        <item itemvalue="Python.Searching_5252" />
+        <item itemvalue="Python.8016_pyramid" />
       </list>
     </recent_temporary>
   </component>
@@ -260,14 +281,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1074" y="0" width="854" height="1047" extended-state="0" />
+    <frame x="594" y="0" width="1334" height="1047" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24877451" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24827586" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5073762" weight="0.28618422" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5073762" weight="0.23684211" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.34320176" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -301,6 +322,17 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/1966_arr_num.py</url>
+          <line>2</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../algorithm_daily/Additional_6190.py">
@@ -380,13 +412,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Additional_1240.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Additional_1240.py" />
     <entry file="file://$PROJECT_DIR$/../algorithm_daily/txt/Additional_1240.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -398,9 +424,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-          <folding>
-            <marker date="1568016025678" expanded="true" signature="56:57" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -408,13 +431,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="10" column="38" lean-forward="true" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../algorithm_daily/Additional_1240.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -432,9 +448,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../algorithm_daily/where_word.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../algorithm_daily/where_word.py" />
     <entry file="file://$PROJECT_DIR$/../algorithm_daily/Searching_5188.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -449,34 +463,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../algorithm_daily/Additional_1242.py">
+    <entry file="file://$PROJECT_DIR$/bj_8979.txt" />
+    <entry file="file://$PROJECT_DIR$/bj_8979.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1976_time_sum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1970_easy_change.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" selection-start-line="2" selection-end-line="33" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1966_arr_num.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/8016_pyramid.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+          <folding>
+            <marker date="1568092667702" expanded="true" signature="76:81" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/input (5).txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1983_grade.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../algorithm_daily/16_Searching_String_5252.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../algorithm_daily/16_Searching_5252.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Searching_5252.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-          <folding>
-            <marker date="1568013497158" expanded="true" signature="144:245" ph="..." />
-          </folding>
+          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../algorithm_daily/Searching_5254.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Searching_5254.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../algorithm_daily/txt/Additional_1242.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9775">
-          <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+        <state relative-caret-position="157">
+          <caret line="3215" column="17" selection-start-line="3215" selection-start-column="17" selection-end-line="3215" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bj_8979.txt">
+    <entry file="file://$PROJECT_DIR$/../algorithm_daily/Additional_1242.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
+        <state relative-caret-position="150">
+          <caret line="9" column="66" selection-start-line="9" selection-start-column="66" selection-end-line="9" selection-end-column="66" />
+          <folding>
+            <marker date="1568103015623" expanded="true" signature="1594:1701" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bj_8979.py">
+    <entry file="file://$PROJECT_DIR$/../algorithm_daily/Additional_1240.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="125">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
         </state>
       </provider>
     </entry>
