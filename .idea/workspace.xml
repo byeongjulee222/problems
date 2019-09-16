@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/../algorithm_daily/Additional_1242.py" line="41" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="b62b0799-1a87-4632-b95e-41a8444f24c2" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aaa.py" beforeDir="false" afterPath="$PROJECT_DIR$/aaa.py" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/1974_sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/1974_sudoku.py" afterDir="false" />
+>>>>>>> 42300c52feffeed08b4d6cb3961ccde1d4e32dff
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +15,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FUSProjectUsageTrigger">
     <session id="598563166">
       <usages-collector id="statistics.lifecycle.project">
@@ -52,6 +54,8 @@
   <component name="FileEditorManager">
     <leaf />
   </component>
+=======
+>>>>>>> 42300c52feffeed08b4d6cb3961ccde1d4e32dff
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -62,6 +66,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -101,16 +106,21 @@
     <option name="width" value="873" />
     <option name="height" value="1047" />
   </component>
+=======
+>>>>>>> 42300c52feffeed08b4d6cb3961ccde1d4e32dff
   <component name="ProjectId" id="1Q5tUFOYcSs1isMFx6Cs4iCen66" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes />
   </component>
+=======
+>>>>>>> 42300c52feffeed08b4d6cb3961ccde1d4e32dff
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../algorithm_daily" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -263,6 +273,7 @@
     </task>
     <servers />
   </component>
+<<<<<<< HEAD
   <component name="ToolWindowManager">
     <frame x="1055" y="0" width="873" height="1047" extended-state="0" />
     <layout>
@@ -285,26 +296,20 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
+=======
+>>>>>>> 42300c52feffeed08b4d6cb3961ccde1d4e32dff
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -317,6 +322,7 @@
       </breakpoints>
     </breakpoint-manager>
   </component>
+<<<<<<< HEAD
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../algorithm_daily/Additional_6190.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -532,4 +538,6 @@
       </provider>
     </entry>
   </component>
+=======
+>>>>>>> 42300c52feffeed08b4d6cb3961ccde1d4e32dff
 </project>
