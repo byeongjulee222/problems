@@ -5,27 +5,21 @@ for tc in range(1, T+1):
     N, M = map(int, input().split())
     arr = [list(input()) for _ in range(N)]
     # print(arr)
-    counts = []
-    for flags in arr:
-        print(flags.count('W'), flags.count('B'), flags.count('R'))
-        counts.append(flags.count('B'))
+    comb = [(i, j) for i in range(1, N-1) for j in range(i+1, N)]
+    # print(comb)
+    Min = 99999
 
-    b_row = counts.index(max(counts))
+    for i in range(len(comb)):
+        cnt = 0
+        for j in range(comb[i][0]):
+            cnt += M - arr[j].count('W')
 
-    cnt = M - arr[b_row].count('B')
-    # print(cnt)
-    for i in range(b_row):
-        cnt += arr[i].count('B')
-        cnt += arr[i].count('R')
+        for j in range(comb[i][0], comb[i][1]):
+            cnt += M - arr[j].count('B')
 
-    # B 라인 다 바꾸고나서 그 다음 행에서 B보다 R의 수가 많으면 그때부터 R로 변경
-    i = b_row
-    while arr[i].count('B') >= arr[i].count('W'):
-        cnt += arr[i].count('W') + arr[i].count('R')
-        i += 1
+        for j in range(comb[i][1], N):
+            cnt += M - arr[j].count('R')
 
-    for j in range(i+1, N):
-        cnt += arr[j].count('B')
-        cnt += arr[j].count('W')
+        Min = min(Min, cnt)
 
-    print(cnt)
+    print('#{} {}'.format(tc, Min))
