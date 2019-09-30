@@ -1,6 +1,3 @@
-N, M = map(int, input().split())
-arr = list(range(1, N+1))
-choose = []
 def comb(k, s):
     if k == M:
         print(*choose)
@@ -8,8 +5,12 @@ def comb(k, s):
 
     for i in range(s, N):
         choose.append(arr[i])
-        comb(k+1, i+1)
+        comb(k+1, i)
         choose.pop()
 
-comb(0, 0)
 
+
+N, M = map(int, input().split())
+arr = sorted(list(map(int, input().split())))
+choose = []
+comb(0, 0)

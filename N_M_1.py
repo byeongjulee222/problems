@@ -6,13 +6,13 @@ def perm(k, n):
 
     for i in range(1, N+1):
         if visit[i]: continue
-        # visit[i] = 1
+        visit[i] = 1
         order.append(i)
         # print(order)
         perm(k+1, n)
         order.pop()
         # print(order)
-        # visit[i] = 0
+        visit[i] = 0
 
 order = []
 N, M = map(int, input().split())
