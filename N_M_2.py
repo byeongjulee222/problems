@@ -12,4 +12,3 @@ def comb(k, s):
         choose.pop()
 
 comb(0, 0)
-
