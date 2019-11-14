@@ -1,5 +1,27 @@
 import sys; sys.stdin = open('txt/BJ_17471.txt', 'r')
 
+def dfs(v):
+    visit[v] = True
+    for w in G[v]:
+        if w in arr and not visit[w]:
+            dfs(w)
+
+
+for tc in range(1, int(input())+1):
+    N = int(input())
+    people = [0] + list(map(int, input().split()))
+    G = [[]]
+    for i in range(1, N+1):
+        arr = list(map(int, input().split()))
+        arr.pop(0)
+        G.append(arr)
+    # print(G)
+
+
+
+
+
+'''
 def dfs(v, group, visit):
     visit[v] = True
     for w in G[v]:
@@ -45,53 +67,4 @@ for tc in range(1, int(input())+1):
 
     if ans == 1000: ans = -1
     print(ans)
-
-
-
-
-'''
-from collections import deque
-from itertools import permutations
-
-def bfs(a):
-    visit = [False] * (N+1)
-    q.append(a)
-
-    while q:
-        x = q.popleft()
-        for w in G[x]:
-            if not visit[w]:
-                q.append(w)
-                visit[w] = True
-
-def subset(k):
-    if k == N:
-        town1 = A
-        town2 = B
-    else:
-        A.append(towns[k])
-        subset(k+1)
-        A.pop()
-
-        B.append(towns[k])
-        subset(k+1)
-        B.pop()
-
-
-for tc in range(1, int(input())+1):
-    N = int(input())
-    towns = [i for i in range(1, N+1)]
-    people = list(map(int, input().split()))
-    q = deque()
-    G = [[] for _ in range(N+1)]
-    for i in range(N):
-        arr = list(map(int, input().split()))
-        for j in range(1, arr[0]+1):
-            G[i+1].append(arr[j])
-
-    # print(G)
-    A, B = [], []
-    town1, town2 = [], []
-    subset(0)
-    print(town1, town2)
 '''

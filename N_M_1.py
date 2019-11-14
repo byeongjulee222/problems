@@ -1,4 +1,4 @@
-def perm(k, n):
+def perm(k):
     global M
     if k == M:
         print(*order)
@@ -9,7 +9,7 @@ def perm(k, n):
         visit[i] = 1
         order.append(i)
         # print(order)
-        perm(k+1, n)
+        perm(k+1)
         order.pop()
         # print(order)
         visit[i] = 0
@@ -17,4 +17,4 @@ def perm(k, n):
 order = []
 N, M = map(int, input().split())
 visit = [0] * (N+1)
-perm(0, N)
+perm(0)
