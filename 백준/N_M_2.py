@@ -1,5 +1,4 @@
 N, M = map(int, input().split())
-arr = list(range(1, N+1))
 choose = []
 def comb(k, s):
     if k == M:
@@ -7,7 +6,7 @@ def comb(k, s):
         return
 
     for i in range(s, N):
-        choose.append(arr[i])
+        choose.append(i+1)
         comb(k+1, i+1)
         choose.pop()
 
