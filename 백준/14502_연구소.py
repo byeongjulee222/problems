@@ -10,7 +10,7 @@ now = time.time()
 # 벽 3개를 세운 후 바이러스 활동 시작
 # 활동이 끝난 후 0의 개수 count (최대값 구하기)
 # 벽 3개를 두는 모든 경우를 구해야하나? (조합)
-# 런타임에러 발생
+# 런타임에러 발생 --> 제출할 때 import 빼먹음 (해결)
 
 def dfs(x, y):
     visit[x][y] = True
@@ -30,24 +30,21 @@ for tc in range(1, int(input())+1):
     arr = [list(map(int, input().split())) for _ in range(N)]
     visit = [[False]*M for _ in range(N)]
 
-
+    # 경우의 수 줄이기 ( 벽이거나 바이러스이면 벽을 세울 장소에서 제외 )
     row_col = [(i, j) for i in range(N) for j in range(M)]
-    # print(row_col)
-    # break
     for i in range(N):
         for j in range(M):
             if arr[i][j] == 1 or arr[i][j] == 2:
                 row_col.pop(row_col.index((i, j)))
 
-    # print(row_col)
-    # break
-
+    # 벽 3개 세우는 경우의 수 만들기
     comb = list(combinations(row_col, 3))
-    # print(comb)
-    # break
 
     Max = 0
     for lst in comb:
+        # 경우마다 원래의 배열 상태와 비교해야 하므로 deepcopy 사용
+        # deepcopy : 복합객체를 새롭게 생성하고 그 안의 내용까지 재귀적으로 새롭게 생성
+        #            --> 어느 한 쪽을 수정하더라도 다른 쪽에 영향 X
         check_arr = copy.deepcopy(arr)
         for l in lst:
             check_arr[l[0]][l[1]] = 1

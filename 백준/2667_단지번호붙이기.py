@@ -22,7 +22,7 @@ N = int(input())
 data = [list(map(int, input())) for _ in range(N)]
 # print(data)
 visit = [[False]*N for _ in range(N)]
-print(visit)
+# print(visit)
 # n = 1
 cnt = 1
 result = []
