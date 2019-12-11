@@ -35,7 +35,8 @@ dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
 year = 0
 num = 0
 while True:
-    # pprint(arr)
+    pprint(arr)
+    print()
     if num >= 2: break
     visit = [[False] * Col for _ in range(Row)]
     for i in range(Row):
