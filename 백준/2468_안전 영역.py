@@ -41,3 +41,40 @@ for height in range(Min_h, Max_h+1):
         Max = cnt
 
 print(Max)
+
+''' (수지씨)
+import sys; sys.setrecursionlimit(10000)
+sys.stdin = open('txt/2468_안전 영역.txt', 'r')
+
+def DFS(x, y, h):
+
+    for direction in range(4):
+        nx = x + DIR[direction][0]
+        ny = y + DIR[direction][1]
+        if 0 <= nx < size and 0 <= ny < size:
+            if not visit[nx][ny] and area[nx][ny] > h:
+                visit[nx][ny] = True
+                DFS(nx, ny, h)
+
+
+size = int(input())
+area = [list(map(int, input().split())) for _ in range(size)]
+DIR = [(0, -1), (1, 0), (0, 1), (-1, 0)]
+num = 0
+max_height = 0
+
+for i in area:
+    max_height = max(max(i), max_height)
+
+num = 1
+for rain_height in range(1, max_height+1):
+    visit = [[False] * size for _ in range(size)]
+    chk = 0
+    for r in range(size):
+        for c in range(size):
+            if area[r][c] > rain_height and not visit[r][c]:
+                chk += 1
+                DFS(r, c, rain_height)
+    num = max(num, chk)
+print(num)
+'''
