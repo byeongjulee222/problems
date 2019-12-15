@@ -1,20 +1,20 @@
 import sys; sys.stdin = open('txt/2589_보물섬.txt', 'r')
-# 각 자리별 bfs 해서 그 자리에서 가장 먼 거리 저장
+# 각 자리별 bfs 해서 그 자리에서 갈 수 있는 가장 먼 거리(dist) return
 from collections import deque
 
-def bfs(x, y):
+def bfs(a, b):
     q = deque()
-    q.append((x, y, 0))
-    check[x][y] = True
+    q.append((a, b, 0))
+    visit[a][b] = True
     dist = 0
     while q:
         x, y, d = q.popleft()
         for i in range(4):
             nx, ny = x+dx[i], y+dy[i]
             if 0 <= nx < N and 0 <= ny < M:
-                if check[nx][ny] == False and arr[nx][ny] == 'L':
+                if not visit[nx][ny] and arr[nx][ny] == 'L':
                     q.append((nx, ny, d+1))
-                    check[nx][ny] = True
+                    visit[nx][ny] = True
                     dist = max(dist, d+1)
     return dist
 
@@ -27,7 +27,8 @@ ans = 0
 for i in range(N):
     for j in range(M):
         if arr[i][j] == 'L':
-            check = [[False] * M for _ in range(N)]
+            visit = [[False]*M for _ in range(N)]
             ans = max(ans, bfs(i, j))
-
+            # print(i, j)
+            # print(ans)
 print(ans)
