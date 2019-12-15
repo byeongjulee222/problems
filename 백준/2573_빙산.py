@@ -30,14 +30,15 @@ def find(x, y):
 
 Row, Col = map(int, input().split())
 arr = [list(map(int, input().split())) for _ in range(Row)]
-# pprint(arr)
+print(arr)
 dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
 year = 0
 num = 0
 while True:
-    pprint(arr)
-    print()
+    # pprint(arr)
+    # print()
     if num >= 2: break
+    num = 0
     visit = [[False] * Col for _ in range(Row)]
     for i in range(Row):
         for j in range(Col):
@@ -53,7 +54,12 @@ while True:
             if not visit[i][j] and arr[i][j] != 0:
                 dfs(i, j)
                 num += 1
+    print('num: ', num)
+    pprint(arr)
 
     year += 1
 
-print(year)
+if num:
+    print(year)
+else:
+    print(0)
