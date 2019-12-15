@@ -12,7 +12,7 @@ def bfs(x, y):
         for i in range(4):
             nx, ny = x+dx[i], y+dy[i]
             if 0 <= nx < N and 0 <= ny < M:
-                if check[nx][ny] != True and arr[nx][ny] == 'L':
+                if check[nx][ny] == False and arr[nx][ny] == 'L':
                     q.append((nx, ny, d+1))
                     check[nx][ny] = True
                     dist = max(dist, d+1)
