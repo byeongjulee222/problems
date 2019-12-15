@@ -46,6 +46,7 @@ for tc in range(1, int(input())+1):
         # deepcopy : 복합객체를 새롭게 생성하고 그 안의 내용까지 재귀적으로 새롭게 생성
         #            --> 어느 한 쪽을 수정하더라도 다른 쪽에 영향 X
         check_arr = copy.deepcopy(arr)
+        # print(lst)
         for l in lst:
             check_arr[l[0]][l[1]] = 1
 
@@ -55,14 +56,13 @@ for tc in range(1, int(input())+1):
                     dfs(i, j)
 
         cnt = 0
+        # print(arr)
         for i in range(N):
-            for j in range(M):
-                if check_arr[i][j] == 0:
-                    cnt += 1
+            cnt += check_arr[i].count(0)
 
         if Max <= cnt:
             Max = cnt
-
     print(Max)
+    # break
 
 print(time.time()-now)
