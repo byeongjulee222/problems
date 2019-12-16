@@ -14,17 +14,20 @@ for tc in range(1, int(input())+1):
             elif arr[i][j] == 2:
                 chicken.append((i, j))
 
-
-    ans = 100000
+    # 치킨집을 기준으로 조합 돌려서
+    # 집을 기준으로
+    # 집~치킨집 거리의 최솟값을 dist에 저장
+    # dist의 최솟값 출력
+    result = 100000
     for chick in combinations(chicken, M):
         # print(chick)
-        s = 0
-        for hx, hy in home:
-            d = 100000
-            for cx, cy in chick:
-                d = min(d, abs(hx-cx)+abs(hy-cy))
-            s += d
-        ans = min(ans, s)
+        dist = 0
+        for home_x, home_y in home:
+            Min = 100000
+            for chicken_x, chicken_y in chick:
+                Min = min(Min, abs(home_x-chicken_x)+abs(home_y-chicken_y))
+            dist += Min
+        result = min(result, dist)
 
-    print(ans)
+    print(result)
     # break
