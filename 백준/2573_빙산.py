@@ -6,7 +6,7 @@ from pprint import pprint
 # 덩어리 개수가 2개 이상될 때 그만
 
 # import sys
-sys.setrecursionlimit(10000)
+sys.setrecursionlimit(1000000)
 def dfs(a, b):
     visit[a][b] = True
     for d in range(4):

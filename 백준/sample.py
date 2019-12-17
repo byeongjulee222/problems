@@ -10,3 +10,18 @@ for val in arr:
 for i in range(N - 1):
     for j in range(i + 1, N):
         print(i, j)
+
+
+sel = []
+def backtrack(k, s):  # k : 고른 개수, 호출 depth
+    if k == R:        # s : 반복의 시작, 이전에 고른 요소의 다음
+        print(sel)
+        return
+
+    for i in range(s, N):
+        # i 번을 고른다 --> 어딘가에 저장
+        sel.append(i)
+        backtrack(k + 1, i + 1)
+        sel.pop()
+
+backtrack(0, 0)
