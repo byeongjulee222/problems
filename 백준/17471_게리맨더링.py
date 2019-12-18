@@ -1,27 +1,5 @@
 import sys; sys.stdin = open('txt/BJ_17471.txt', 'r')
 
-def dfs(v):
-    visit[v] = True
-    for w in G[v]:
-        if w in arr and not visit[w]:
-            dfs(w)
-
-
-for tc in range(1, int(input())+1):
-    N = int(input())
-    people = [0] + list(map(int, input().split()))
-    G = [[]]
-    for i in range(1, N+1):
-        arr = list(map(int, input().split()))
-        arr.pop(0)
-        G.append(arr)
-    # print(G)
-
-
-
-
-
-'''
 def dfs(v, group, visit):
     visit[v] = True
     for w in G[v]:
@@ -67,4 +45,3 @@ for tc in range(1, int(input())+1):
 
     if ans == 1000: ans = -1
     print(ans)
-'''
