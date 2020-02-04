@@ -1,27 +1,30 @@
 import sys; sys.stdin = open('txt/14889_스타트와링크.txt', 'r')
-# 조합으로도 짤 수 있다.
-
-# 부분집합
-# SW아카데미 요리사 문제와 비슷
-# 두 팀으로 나누는데 능력치 차이가 가장 작게
-# A 팀 / B 팀 나눠서 A로 넣고 B로 넣고
-# Min = abs(A-B)
-
+from itertools import combinations
 
 for tc in range(1, int(input())+1):
     N = int(input())
     arr = [list(map(int, input().split())) for _ in range(N)]
-    # print(arr)
-    # break
 
+    member = list(range(N))
+    set1 = list(combinations(member, N // 2))
+    Min = 999999
+    for group in set1:
+        rest = list(set(member) - set(group))
 
+        group_comb = list(combinations(group, 2))
+        group_rest = list(combinations(rest, 2))
 
-
-
-
+        A, B = 0, 0
+        for (i, j) in group_comb:
+            A += arr[i][j] + arr[j][i]
+        for i, j in group_rest:
+            B += arr[i][j] + arr[j][i]
+        Min = min(Min, abs(A - B))
+    #
+    print(Min)
 
 # 두 그룹으로 나누는 문제 코드 구현
-
+'''
 N = 4
 # acnt, bcnt 를 index로 사용
 def backtrack(k, acnt, bcnt):
@@ -44,3 +47,4 @@ A = [0] * N
 B = [0] * N
 
 backtrack(1, 1, 0)
+'''
