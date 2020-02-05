@@ -23,17 +23,17 @@ def cal(i, res, plus, minus, times, div):
 
 # + - * /
 for _ in range(int(input())):
-N = int(input())
-arr = list(map(int, input().split()))
-# print(arr)
-# break
-plus, minus, times, div = map(int, input().split())
+    N = int(input())
+    arr = list(map(int, input().split()))
+    # print(arr)
+    # break
+    plus, minus, times, div = map(int, input().split())
 
-Max = 0
-Min = 999999999
-cal(1, arr[0], plus, minus, times, div)
-print(Max)
-print(Min)
+    Max = -99999999
+    Min = 999999999
+    cal(1, arr[0], plus, minus, times, div)
+    print(Max)
+    print(Min)
 
 
 
