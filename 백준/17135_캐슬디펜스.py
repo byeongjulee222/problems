@@ -3,58 +3,104 @@ from itertools import combinations
 from collections import deque
 from copy import deepcopy
 
-def Attack(enemy):
-    global killed
-    target = [(0, Max) for _ in range(3)]
-    dist = [Max for _ in range(3)]
+for tc in range(1, int(input())+1):
+N, M, D = map(int, input().split())
+arr = [list(map(int, input().split())) for _ in range(N)]
 
-    while enemy:
-        x, y = enemy.popleft()
-        # archer의 3명
-        for i in range(3):
-            # archer의 행은 N으로 고정
-            # archer와 적 거리 중 가장 작은 값 저장 (그 때의 적 좌표 저장)
-            d = abs(N-x) + abs(archer_loc[i]-y)
-            if dist[i] > d:
-                dist[i] = d
-                target[i] = (x, y)
+castle = [i for i in range(M)]
 
-            # 같은 거리에 있는 적이 여럿일 때, 가장 왼쪽의 적을 선택
-            if dist[i] == d and y < target[i][1]:
-                target[i] = (x, y)
+ans = 0
+Max = 0xffffff
+enemy = deque()
 
-    # 목표로 설정된 적 제거
-    for i, (x, y) in enumerate(target):
-        if Map[x][y]:
-            if dist[i] <= D:
+for archers in combinations(castle, 3):
+    Map = deepcopy(arr)
+    killed = 0
+    while True:
+        for i in range(N):
+            for j in range(M):
+                if Map[i][j]:
+                    enemy.append((i, j))
+
+        if not len(enemy): break
+
+        target = [(0, Max) for _ in range(3)]
+        dist = [Max for _ in range(3)]
+
+        while enemy:
+            x, y = enemy.popleft()
+            for i in range(3):
+                d = abs(N-x) + abs(archers[i]-y)
+                if dist[i] > d:
+                    dist[i] = d
+                    target[i] = (x, y)
+
+                if dist[i] == d and y < target[i][1]:
+                    target[i] = (x, y)
+
+        for i, (x, y) in enumerate(target):
+            if Map[x][y] and dist[i] <= D:
                 Map[x][y] = 0
                 killed += 1
+        Map = [[0] * M] + Map[:N-1]
+    ans = max(ans, killed)
+
+print(ans)
 
 
-for tc in range(1, int(input())+1):
-    N, M, D = map(int, input().split())
-    arr = [list(map(int, input().split())) for _ in range(N)]
+    '''
     castle = [i for i in range(M)]
+
     ans = 0
-    Max = 100000
+    Max = 0xfffffff
     enemy = deque()
 
-    for archer_loc in combinations(castle, 3):
-        # print(archer_loc)
-        #
+    for archers in combinations(castle, 3):
         Map = deepcopy(arr)
         killed = 0
         while True:
+            # 적 위치 저장
             for i in range(N):
                 for j in range(M):
                     if Map[i][j]:
                         enemy.append((i, j))
 
+            # 종료 조건(Map에 적이 없을 때)
             if len(enemy) == 0: break
 
-            Attack(enemy)
+            # 최소 거리에 있는 적을 찾기위해 Max 거리를 최대로 지정
+            # target은 번호 순서대로 궁수 번호와 맞춰서 몇 번 궁수가 어떤 적(좌표)를 선택했는지 저장
+            target = [(0, Max) for _ in range(3)]
+            dist = [Max for _ in range(3)]
 
-            # 적 밑으로 내리기
+            # enemy(deque)에 적이 있는 경우 계속 진행
+            while enemy:
+                x, y = enemy.popleft()
+                # 궁수 3명 반복
+                for i in range(3):
+                    # 궁수 행은 N으로 고정, 열은 archers[i](조합)
+                    d = abs(N - x) + abs(archers[i] - y)
+                    # 사정거리 안에 들어왔을 때
+                    if dist[i] > d:
+                        # 거리를 d로 정해두고
+                        dist[i] = d
+                        # i번째 궁수의 타겟(좌표)을 저장
+                        target[i] = (x, y)
+
+                    # 사정거리 안에 있는 적이 여럿일 경우 y가 작은 거을 타겟으로 선정
+                    if dist[i] == d and y < target[i][1]:
+                        target[i] = (x, y)
+
+            # 궁수별로 타겟을 다 정한 후
+            #
+            for i, (x, y) in enumerate(target):
+                if Map[x][y]:
+                    if dist[i] <= D:
+                        Map[x][y] = 0
+                        killed += 1
+
             Map = [[0] * M] + Map[:N-1]
         ans = max(ans, killed)
+
     print(ans)
+    '''
