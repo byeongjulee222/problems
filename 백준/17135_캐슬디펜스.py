@@ -4,52 +4,9 @@ from collections import deque
 from copy import deepcopy
 
 for tc in range(1, int(input())+1):
-N, M, D = map(int, input().split())
-arr = [list(map(int, input().split())) for _ in range(N)]
-
-castle = [i for i in range(M)]
-
-ans = 0
-Max = 0xffffff
-enemy = deque()
-
-for archers in combinations(castle, 3):
-    Map = deepcopy(arr)
-    killed = 0
-    while True:
-        for i in range(N):
-            for j in range(M):
-                if Map[i][j]:
-                    enemy.append((i, j))
-
-        if not len(enemy): break
-
-        target = [(0, Max) for _ in range(3)]
-        dist = [Max for _ in range(3)]
-
-        while enemy:
-            x, y = enemy.popleft()
-            for i in range(3):
-                d = abs(N-x) + abs(archers[i]-y)
-                if dist[i] > d:
-                    dist[i] = d
-                    target[i] = (x, y)
-
-                if dist[i] == d and y < target[i][1]:
-                    target[i] = (x, y)
-
-        for i, (x, y) in enumerate(target):
-            if Map[x][y] and dist[i] <= D:
-                Map[x][y] = 0
-                killed += 1
-        Map = [[0] * M] + Map[:N-1]
-    ans = max(ans, killed)
-
-print(ans)
-
-
-    '''
-    castle = [i for i in range(M)]
+    N, M, D = map(int, input().split())
+    arr = [list(map(int, input().split())) for _ in range(N)]
+    castle = [i for i in range(N)]
 
     ans = 0
     Max = 0xfffffff
@@ -103,4 +60,3 @@ print(ans)
         ans = max(ans, killed)
 
     print(ans)
-    '''
