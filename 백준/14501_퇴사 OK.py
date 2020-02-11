@@ -11,6 +11,8 @@ for tc in range(1, int(input())+1):
         if i + arr[i][0] <= N:
             compare[i] = arr[i][1]
             for j in range(i):
+                # 날짜 범위 안에서
                 if j + arr[j][0] <= i:
+                    # i번까지 올 때 최대 = max(i번의 크기 vs i번까지의 합)
                     compare[i] = max(compare[i], compare[j] + arr[i][1])
     print(max(compare))
