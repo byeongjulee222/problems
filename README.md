@@ -80,38 +80,100 @@
 - 작성코드
 
 ```python
-def dfs(row, col):
-    global cnt
-    arr[row][col] = 0
-    visit[row][col] = True
-    for i in range(4):
-        x, y = row+dx[i], col+dy[i]
-        if 0 <= x < N and 0 <= y < N:
-            if arr[x][y] == 1 and not visit[x][y]:
-                cnt += 1
-                dfs(x, y)
+# DFS (1)
+# result 리스트를 만들어서 단지 수 추가
+# len(result) 출력하고
+# result 를 오름차순 정렬한 후 print
 
+dx, dy = [0, 0, -1, 1], [-1, 1, 0, 0]
+
+def dfs(x, y):
+    global cnt
+    # 방문했으면 그 지점은 0으로 변경
+    arr[x][y] = 0
+    visit[x][y] = True
+    for i in range(4):
+        nx, ny = x+dx[i], y+dy[i]
+        # 경계조건 + 방문조건 + 맵에서의 위치 값 == 1
+        if 0 <= nx < N and 0 <= ny < N and not visit[nx][ny] and arr[nx][ny] == 1:
+            cnt += 1
+            dfs(nx, ny)
     return cnt
 
 N = int(input())
 arr = [list(map(int, input())) for _ in range(N)]
 # print(arr)
-visit = [[False] * N for _ in range(N)]
-# print(visit)
-dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
-result = []
 
+visit = [[False]*N for _ in range(N)]
+res = []
+# 1인 지점을 만났을 때 그 지점을 개수에 포함시켜야 하므로
+# cnt = 1로 시작한다.
 cnt = 1
 for i in range(N):
     for j in range(N):
+        # 맵은 하나로 고정 되어있기 때문에
+        # not visit으로 끊어낼 수 있다
         if arr[i][j] == 1 and not visit[i][j]:
             dfs(i, j)
-            result.append(cnt)
+            res.append(cnt)
             cnt = 1
 
-result.sort()
-print(len(result))
-for i in result:
+# .sort()는 변경사항이 저장됨
+res.sort()
+print(len(res))
+for i in res:
     print(i)
+```
+
+
+
+
+
+## 안전영역
+
+![image](https://user-images.githubusercontent.com/52685247/74350254-cfb20500-4df8-11ea-8ef5-e6fb9998c853.png)
+
+```python
+sys.setrecursionlimit(10000)
+
+def dfs(x, y):
+    visit[x][y] = True
+    # 아래 배열을 돌 때 i, j를 사용했기 때문에
+    # 다른 변수 k 를 사용하는 것이 안전하다
+    for k in range(4):
+        nx, ny = x+dx[k], y+dy[k]
+        if 0 <= nx < N and 0 <= ny < N:
+            if arr[nx][ny] > height and not visit[nx][ny]:
+                dfs(nx, ny)
+
+
+N = int(input())
+arr = [list(map(int, input().split())) for _ in range(N)]
+dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
+
+# 최소값도 미리 찾아두고 범위를 좁히는데 사용
+Max_h, Min_h = 0, 100
+for i in range(N):
+    for j in range(N):
+        if Max_h <= arr[i][j]: Max_h = arr[i][j]
+        if Min_h >= arr[i][j]: Min_h = arr[i][j]
+
+# 모든 지역이 안전지역인 경우 그룹 수 : 1
+Max = 1
+
+# 높이의 최소값, 최대값 범위를 돌며 가장 많은 수를 뽑아냄
+for height in range(Min_h, Max_h+1):
+    cnt = 0
+    visit = [[False] * N for _ in range(N)]
+    for i in range(N):
+        for j in range(N):
+            if height < arr[i][j] and not visit[i][j]:
+                cnt += 1
+                dfs(i, j)
+
+    if Max <= cnt:
+        Max = cnt
+
+print(Max)
 ```
 

@@ -4,36 +4,41 @@ import sys; sys.stdin = open("txt/bj_2667.txt", "r")
 # len(result) 출력하고
 # result 를 오름차순 정렬한 후 print
 
+dx, dy = [0, 0, -1, 1], [-1, 1, 0, 0]
+
 def dfs(x, y):
     global cnt
-    data[x][y] = 0
+    # 방문했으면 그 지점은 0으로 변경
+    arr[x][y] = 0
     visit[x][y] = True
     for i in range(4):
         nx, ny = x+dx[i], y+dy[i]
-        if 0 <= nx < N and 0 <= ny < N and not visit[nx][ny]:
-           if data[nx][ny] == 1:
-                cnt += 1
-                dfs(nx, ny)
+        # 경계조건 + 방문조건 + 맵에서의 위치 값 == 1
+        if 0 <= nx < N and 0 <= ny < N and not visit[nx][ny] and arr[nx][ny] == 1:
+            cnt += 1
+            dfs(nx, ny)
     return cnt
 
-dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
 N = int(input())
+arr = [list(map(int, input())) for _ in range(N)]
+# print(arr)
 
-data = [list(map(int, input())) for _ in range(N)]
-# print(data)
 visit = [[False]*N for _ in range(N)]
-# print(visit)
-# n = 1
+res = []
+# 1인 지점을 만났을 때 그 지점을 개수에 포함시켜야 하므로
+# cnt = 1로 시작한다.
 cnt = 1
-result = []
 for i in range(N):
     for j in range(N):
-        if data[i][j] == 1 and not visit[i][j]:
+        # 맵은 하나로 고정 되어있기 때문에
+        # not visit으로 끊어낼 수 있다
+        if arr[i][j] == 1 and not visit[i][j]:
             dfs(i, j)
-            result.append(cnt)
+            res.append(cnt)
             cnt = 1
 
-result.sort()
-print(len(result))
-for i in result:
+# .sort()는 변경사항이 저장됨
+res.sort()
+print(len(res))
+for i in res:
     print(i)
