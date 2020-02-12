@@ -17,17 +17,18 @@ N = int(input())
 arr = [list(map(int, input().split())) for _ in range(N)]
 dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
 
-# 최소값도 미리 찾아두고 범위를 좁히는데 사용
+# 섬의 높이 범위내에서 판단하면됨
+# 최소값, 최대값을 미리 찾아두고 범위를 좁히는데 사용
 Max_h, Min_h = 0, 100
 for i in range(N):
     for j in range(N):
         if Max_h <= arr[i][j]: Max_h = arr[i][j]
         if Min_h >= arr[i][j]: Min_h = arr[i][j]
 
-# 모든 지역이 안전지역인 경우 그룹 수 : 1
+# <<중요>> 모든 지역이 안전지역인 경우 그룹 수 : 1
 Max = 1
 
-# 높이의 최소값, 최대값 범위를 돌며 가장 많은 수를 뽑아냄
+# 높이의 최소값, 최대값 범위를 돌며 Max 뽑아냄
 for height in range(Min_h, Max_h+1):
     cnt = 0
     visit = [[False] * N for _ in range(N)]
@@ -41,6 +42,7 @@ for height in range(Min_h, Max_h+1):
         Max = cnt
 
 print(Max)
+
 
 ''' (수지씨)
 import sys; sys.setrecursionlimit(10000)
