@@ -26,7 +26,7 @@ def clean(x, y, d, cnt):
     # 비어있다면 후진
     if not arr[x-dx[d]][y-dy[d]]:
         clean(x-dx[d], y-dy[d], d, cnt)
-        
+
     # 벽이라면 끝낸다
     else:
         print(cnt)
