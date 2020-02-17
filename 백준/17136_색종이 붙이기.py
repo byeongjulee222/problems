@@ -32,10 +32,10 @@ def dfs(depth):
             one_zero = []  # 1 에서 0으로 바뀐 좌표 저장해서 나중에 도로 바꿔준다.
 
             if isCoverable(x, y, size):  # 해당 사이즈로 덮을 수 있다면
-                for next_y in range(x, x + size):
-                    for next_x in range(y, y + size):
-                        MAP[next_y][next_x] = 0  # 1에서 0 으로 바꾸고
-                        one_zero.append((next_y, next_x))  # 좌표를 저장
+                for next_x in range(x, x + size):
+                    for next_y in range(y, y + size):
+                        MAP[next_x][next_y] = 0  # 1에서 0 으로 바꾸고
+                        one_zero.append((next_x, next_y))  # 좌표를 저장
 
                 #### 이 부분이 이해가 잘 안됨 ####
                 # 왜 색종이 넓이만큼 빼고 더하는지?
