@@ -1,9 +1,80 @@
 import sys; sys.stdin = open('txt/14502_연구소.txt', 'r')
+import itertools
+import collections
+import copy
+from pprint import pprint
+# bfs : 964 ms
+# dfs : 1340 ms
+
+dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
+
+def bfs(x, y):
+    Q = collections.deque()
+    Q.append((x, y))
+    while Q:
+        x, y = Q.popleft()
+        for i in range(4):
+            nx, ny = x+dx[i], y+dy[i]
+            if 0 <= nx < N and 0 <= ny < M and not visit[nx][ny] and copied_arr[nx][ny] == 0:
+                copied_arr[nx][ny] = 2
+                visit[nx][ny] = True
+                Q.append((nx, ny))
+
+def dfs(x, y):
+    visit[x][y] = True
+    for i in range(4):
+        nx, ny = x+dx[i], y+dy[i]
+        if 0 <= nx < N and 0 <= ny < M and not visit[nx][ny] and copied_arr[nx][ny] == 0:
+            copied_arr[nx][ny] = 2
+            visit[nx][ny] = True
+            dfs(nx, ny)
+
+
+for _ in range(int(input())):
+    N, M = map(int, input().split())
+    arr = [list(map(int, input().split())) for _ in range(N)]
+
+    # 바이러스와 빈칸의 좌표 저장
+    virus = []
+    place = []
+    for i in range(N):
+        for j in range(M):
+            if arr[i][j] == 2:
+                virus.append((i, j))
+            elif arr[i][j] == 0:
+                place.append((i, j))
+
+    Max = 0
+    # 빈 칸들 중 3개 뽑는 조합
+    for comb in itertools.combinations(place, 3):
+        # 각 경우마다 맵 새로해줌
+        copied_arr = copy.deepcopy(arr)
+        visit = [[False] * M for _ in range(N)]
+        # 벽 세우기
+        for x, y in comb:
+            copied_arr[x][y] = 1
+
+        # 바이러스 퍼뜨리기
+        for x, y in virus:
+            bfs(x, y)
+            # dfs(x, y)
+
+        # 바이러스 안퍼진 곳 개수 카운트
+        cnt = 0
+        for i in range(N):
+            for j in range(M):
+                if copied_arr[i][j] == 0:
+                    cnt += 1
+
+        Max = max(Max, cnt)
+
+    print(Max)
+
+'''
 from itertools import combinations
 import copy
 import time
 import pprint
-
 
 
 # 벽을 3개 세울 수 있다.
@@ -73,3 +144,4 @@ for tc in range(1, int(input())+1):
     print(Max)
 
     print(time.time()-now)
+'''
