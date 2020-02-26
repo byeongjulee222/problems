@@ -1,4 +1,53 @@
 import sys; sys.stdin = open('txt/14888_연산자 끼워넣기.txt', 'r')
+
+def cal(idx, val, plus, minus, mul, div):
+    global Max, Min
+    if idx == N:
+        Max = max(Max, val)
+        Min = min(Min, val)
+
+    if plus:
+        cal(idx + 1, val + nums[idx], plus - 1, minus, mul, div)
+    if minus:
+        cal(idx + 1, val - nums[idx], plus, minus - 1, mul, div)
+    if mul:
+        cal(idx + 1, val * nums[idx], plus, minus, mul - 1, div)
+    if div:
+        cal(idx + 1, int(val / nums[idx]), plus, minus, mul, div - 1)
+
+for _ in range(int(input())):
+    N = int(input())
+    nums = list(map(int, input().split()))
+    plus, minus, mul, div = map(int, input().split())
+
+    Max = -999999999
+    Min = 999999999
+    cal(1, nums[0], plus, minus, mul, div)
+    print(Max)
+    print(Min)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
 from itertools import permutations
 from collections import deque
 from copy import deepcopy
@@ -34,37 +83,37 @@ for _ in range(int(input())):
     cal(1, arr[0], plus, minus, times, div)
     print(Max)
     print(Min)
+'''
 
 
+'''
+pmtd = ['+', '-', '*', '//']
+pmtd_lst = list(map(int, input().split()))
 
-    '''
-    pmtd = ['+', '-', '*', '//']
-    pmtd_lst = list(map(int, input().split()))
+lst = []
+for i in range(4):
+    for _ in range(pmtd_lst[i]):
+        lst.append(pmtd[i])
 
-    lst = []
-    for i in range(4):
-        for _ in range(pmtd_lst[i]):
-            lst.append(pmtd[i])
+# print(lst)
+perm = list(permutations(lst, len(lst)))
 
-    # print(lst)
-    perm = list(permutations(lst, len(lst)))
+Min = 999999
+Max = -999999
+for i in perm:
+    result = arr[0]
+    for j in range(len(i)):
+        if i[j] == '+':
+            result += arr[j+1]
+        elif i[j] == '-':
+            result -= arr[j+1]
+        elif i[j] == '*':
+            result *= arr[j+1]
+        elif i[j] == '//':
+            result = int(result/arr[j+1])
+    Min = min(Min, result)
+    Max = max(Max, result)
 
-    Min = 999999
-    Max = -999999
-    for i in perm:
-        result = arr[0]
-        for j in range(len(i)):
-            if i[j] == '+':
-                result += arr[j+1]
-            elif i[j] == '-':
-                result -= arr[j+1]
-            elif i[j] == '*':
-                result *= arr[j+1]
-            elif i[j] == '//':
-                result = int(result/arr[j+1])
-        Min = min(Min, result)
-        Max = max(Max, result)
-
-    print(Max)
-    print(Min)
-    '''
+print(Max)
+print(Min)
+'''
