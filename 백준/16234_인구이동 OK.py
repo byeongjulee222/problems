@@ -4,11 +4,10 @@ import sys; sys.stdin = open('txt/16234_인구이동.txt', 'r')
 # union에 이미 있으면 넣지 않기
 # 배열 끝까지 돌면 union 안에 있는 국가들 인구 평균으로 변경
 # 변경 후 day += 1
+import collections
 
-from collections import deque
-
-def bfs(maps, a, b):
-    q = deque()
+def bfs(map, a, b):
+    q = collections.deque()
     union = set()
     q.append((a, b))
     while q:
@@ -16,38 +15,46 @@ def bfs(maps, a, b):
         visit[x][y] = True
         for i in range(4):
             nx, ny = x+dx[i], y+dy[i]
-            if 0 <= nx < len(maps) and 0 <= ny < len(maps[0]) and not visit[nx][ny]:
-                if L <= abs(maps[x][y]-maps[nx][ny]) <= R:
+            # 경계조건 + 방문확인
+            if 0 <= nx < N and 0 <= ny < N and not visit[nx][ny]:
+                # 국경선 open/close 조건
+                if L <= abs(map[x][y] - map[nx][ny]) <= R:
+                    # set.update(리스트) : 없는 항목만 set에 추가
                     union.update([(x, y), (nx, ny)])
                     q.append((nx, ny))
-                    visit[nx][ny] = True
     return union
 
-N, L, R = map(int, input().split())
-arr = [list(map(int, input().split())) for _ in range(N)]
+
 dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
 
-day = 0
-while True:
-    visit = [[False] * N for _ in range(N)]
-    results = []
-    for i in range(len(arr)):
-        for j in range(len(arr[0])):
-            if not visit[i][j]:
-                results.append(bfs(arr, i, j))
+for _ in range(int(input())):
+    N, L, R = map(int, input().split())
+    arr = [list(map(int, input().split())) for _ in range(N)]
 
-    # total = 0 을 여기에 두고 돌리는 실수를 해서 계속 틀림
-    for result in results:
-        total = 0
-        if result:
-            for a, b in result:
-                total += arr[a][b]
-            avg = total // len(result)
+    day = 0
+    while True:
+        visit = [[False]*N for _ in range(N)]
+        results = []
+        for i in range(N):
+            for j in range(N):
+                if not visit[i][j]:
+                    results.append(bfs(arr, i, j))
 
-            for a, b in result:
-                arr[a][b] = avg
+        # total = 0 을 여기에 두고 돌리는 실수를 해서 계속 틀림
+        for result in results:
+            total = 0
+            if result:
+                # 연합국 안에서 평균값 구하고
+                for a, b in result:
+                    total += arr[a][b]
+                avg = total // len(result)
+                
+                # 국가별 인구를 평균값으로 변경
+                for a, b in result:
+                    arr[a][b] = avg
 
-    if len(results) == N*N: break
-    day += 1
+        # 인구이동 종료조건
+        if len(results) == N*N: break
 
-print(day)
+        day += 1
+    print(day)
