@@ -2,6 +2,9 @@ import sys; sys.stdin = open('txt/1952_수영장.txt', 'r')
 
 def swim(price, date):
     global Min
+    # 마지막 한 달이 남았더라도 세 달치가 더 저렴하다면
+    # 세 달치로 결제할 수 있음
+    # ==> date가 12를 넘어도 됨
     if date >= 12:
         Min = min(Min, price)
         return
