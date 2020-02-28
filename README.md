@@ -2,49 +2,49 @@
 
 ## 목록
 
-| 문제                                                         | 출처      | 기타                  |
-| ------------------------------------------------------------ | --------- | --------------------- |
-| [2667.단지번호붙이기][BOJ2667]        [<문제보기>](#단지번호붙이기) | BOJ       | DFS or BFS            |
-| [2468.안전영역][BOJ2468]                   [<문제보기>](#안전영역) | BOJ       | DFS or BFS            |
-| [2636.치즈][BOJ2636]                           [<문제보기>](#치즈) | BOJ       | DFS or BFS            |
-| [17144.미세먼지 안녕!](https://www.acmicpc.net/problem/17144)       [<문제보기>](#미세먼지-안녕) | BOJ       |                       |
-| [17136.색종이 붙이기](https://www.acmicpc.net/problem/17136)        [<문제보기>](#색종이-붙이기) | BOJ       | 백트래킹              |
-| [2573.빙산][BOJ2573]                           [<문제보기>](#빙산) | BOJ       |                       |
-| [2589.보물섬][BOJ2589]                       [<문제보기>](#보물섬) | BOJ       | BFS                   |
-| [16234.인구이동][BOJ16234]                 [<문제보기>](#인구이동) | BOJ       |                       |
-| [14889.스타트와 링크][BOJ14889]        [<문제보기>](#스타트와-링크) | BOJ       |                       |
-| [14502.연구소][BOJ14502]                     [<문제보기>](#연구소) | BOJ       | 조합, BFS or DFS      |
-| [14501.퇴사][BOJ14501]                         [<문제보기>](#퇴사) | BOJ       |                       |
-| [15686.치킨배달][BOJ15686]                 [<문제보기>](#치킨배달) | BOJ       |                       |
-| [14888.연산자 끼워넣기][BOJ14888]     [<문제보기>](#연산자-끼워넣기) | BOJ       | 백트래킹              |
-| [17471.게리맨더링][BOJ17471]             [<문제보기>](#게리맨더링) | BOJ       |                       |
-| [17070.파이프 옮기기1][BOJ17070]      [<문제보기>](#파이프-옮기기1) | BOJ       |                       |
-| [15683.감시][BOJ15683]                         [<문제보기>](#감시) | BOJ       |                       |
-| [17135.캐슬디펜스][BOJ17135]             [<문제보기>](#캐슬디펜스) | BOJ       |                       |
-| --------------------------------                             | --------- | -----------           |
-| [14503.로봇청소기][BOJ14503]             [<문제보기>](#로봇청소기) | BOJ       | 백트래킹              |
-| [16235.나무재테크][BOJ16235]             [<문제보기>](#나무재테크) | BOJ       |                       |
-| [17837.새로운게임2][BOJ17837]           [<문제보기>](#새로운게임2) | BOJ       |                       |
-| [12100.2048][BOJ12100]                        [<문제보기>](#2048) | BOJ       |                       |
-| [17142.연구소3][BOJ17142]                   [<문제보기>](#연구소3) | BOJ       |                       |
-| [2146.다리만들기][BOJ2146]               [<문제보기>](#다리만들기) | BOJ       |                       |
-| [17472.다리만들기2][BOJ17472]           [<문제보기>](#다리만들기2) | BOJ       |                       |
-| [2644.촌수계산][BOJ2644]                   [<문제보기>](#촌수계산) | BOJ       |                       |
-| [2479.경로찾기][BOJ2479]                   [<문제보기>](#경로찾기) | BOJ       |                       |
-| [1726.로봇][BOJ1726]                           [<문제보기>](#로봇) | BOJ       |                       |
-| [10711.모래성][BOJ10711]                     [<문제보기>](#모래성) | BOJ       | SWEA 1907.모래성 쌓기 |
-| --------------------------------                             | --------- | -----------           |
-| 1867.프로세서 연결하기   [<문제보기>](#프로세서-연결하기)    | SWEA      |                       |
-| 1949.등산로조성                [<문제보기>](#등산로조성)     | SWEA      |                       |
-| 1953.탈주범검거                [<문제보기>](#탈주범검거)     | SWEA      |                       |
-| 1952.수영장                        [<문제보기>](#수영장)     | SWEA      |                       |
-| 2382.미생물격리                [<문제보기>](#미생물격리)     | SWEA      |                       |
-| 2105.디저트카페                [<문제보기>](#디저트카페)     | SWEA      |                       |
-| 5650.핀볼 게임                   [<문제보기>](#핀볼-게임)    | SWEA      |                       |
-| 5656.벽돌깨기                    [<문제보기>](#벽돌깨기)     | SWEA      |                       |
-| --------------------------------                             | --------- | -----------           |
-| 그 외                                                        |           |                       |
-| 2611.좋은수열                    [<문제보기>](#좋은수열)     |           |                       |
+| 문제                                                         | 출처      | 기타                   |
+| ------------------------------------------------------------ | --------- | ---------------------- |
+| [2667.단지번호붙이기][BOJ2667]        [<문제보기>](#단지번호붙이기) | BOJ       | DFS or BFS             |
+| [2468.안전영역][BOJ2468]                   [<문제보기>](#안전영역) | BOJ       | DFS or BFS             |
+| [2636.치즈][BOJ2636]                           [<문제보기>](#치즈) | BOJ       | DFS or BFS             |
+| [17144.미세먼지 안녕!](https://www.acmicpc.net/problem/17144)       [<문제보기>](#미세먼지-안녕) | BOJ       |                        |
+| [17136.색종이 붙이기](https://www.acmicpc.net/problem/17136)        [<문제보기>](#색종이-붙이기) | BOJ       | 백트래킹               |
+| [2573.빙산][BOJ2573]                           [<문제보기>](#빙산) | BOJ       |                        |
+| [2589.보물섬][BOJ2589]                       [<문제보기>](#보물섬) | BOJ       | BFS                    |
+| [16234.인구이동][BOJ16234]                 [<문제보기>](#인구이동) | BOJ       | BFS, set.update() 활용 |
+| [14889.스타트와 링크][BOJ14889]        [<문제보기>](#스타트와-링크) | BOJ       | 조합                   |
+| [14502.연구소][BOJ14502]                     [<문제보기>](#연구소) | BOJ       | 조합, BFS or DFS       |
+| [14501.퇴사][BOJ14501]                         [<문제보기>](#퇴사) | BOJ       |                        |
+| [15686.치킨배달][BOJ15686]                 [<문제보기>](#치킨배달) | BOJ       |                        |
+| [14888.연산자 끼워넣기][BOJ14888]     [<문제보기>](#연산자-끼워넣기) | BOJ       | 백트래킹               |
+| [17471.게리맨더링][BOJ17471]             [<문제보기>](#게리맨더링) | BOJ       |                        |
+| [17070.파이프 옮기기1][BOJ17070]      [<문제보기>](#파이프-옮기기1) | BOJ       |                        |
+| [15683.감시][BOJ15683]                         [<문제보기>](#감시) | BOJ       |                        |
+| [17135.캐슬디펜스][BOJ17135]             [<문제보기>](#캐슬디펜스) | BOJ       |                        |
+| --------------------------------                             | --------- | -----------            |
+| [14503.로봇청소기][BOJ14503]             [<문제보기>](#로봇청소기) | BOJ       | 백트래킹               |
+| [16235.나무재테크][BOJ16235]             [<문제보기>](#나무재테크) | BOJ       |                        |
+| [17837.새로운게임2][BOJ17837]           [<문제보기>](#새로운게임2) | BOJ       |                        |
+| [12100.2048][BOJ12100]                        [<문제보기>](#2048) | BOJ       |                        |
+| [17142.연구소3][BOJ17142]                   [<문제보기>](#연구소3) | BOJ       |                        |
+| [2146.다리만들기][BOJ2146]               [<문제보기>](#다리만들기) | BOJ       |                        |
+| [17472.다리만들기2][BOJ17472]           [<문제보기>](#다리만들기2) | BOJ       |                        |
+| [2644.촌수계산][BOJ2644]                   [<문제보기>](#촌수계산) | BOJ       |                        |
+| [2479.경로찾기][BOJ2479]                   [<문제보기>](#경로찾기) | BOJ       |                        |
+| [1726.로봇][BOJ1726]                           [<문제보기>](#로봇) | BOJ       |                        |
+| [10711.모래성][BOJ10711]                     [<문제보기>](#모래성) | BOJ       | SWEA 1907.모래성 쌓기  |
+| --------------------------------                             | --------- | -----------            |
+| 1867.프로세서 연결하기   [<문제보기>](#프로세서-연결하기)    | SWEA      |                        |
+| 1949.등산로조성                [<문제보기>](#등산로조성)     | SWEA      |                        |
+| 1953.탈주범검거                [<문제보기>](#탈주범검거)     | SWEA      |                        |
+| [1952.수영장](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PpFQaAQMDFAUq)                        [<문제보기>](#수영장) | SWEA      | 백트래킹               |
+| 2382.미생물격리                [<문제보기>](#미생물격리)     | SWEA      |                        |
+| 2105.디저트카페                [<문제보기>](#디저트카페)     | SWEA      |                        |
+| 5650.핀볼 게임                   [<문제보기>](#핀볼-게임)    | SWEA      |                        |
+| 5656.벽돌깨기                    [<문제보기>](#벽돌깨기)     | SWEA      |                        |
+| --------------------------------                             | --------- | -----------            |
+| 그 외                                                        |           |                        |
+| 2611.좋은수열                    [<문제보기>](#좋은수열)     |           |                        |
 
 [BOJ12100]: https://www.acmicpc.net/problem/12100
 [BOJ14503]: https://www.acmicpc.net/problem/14503
@@ -428,6 +428,109 @@ print(ans)
 
 
 
+## 인구이동
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/75415907-5f66c000-5970-11ea-87e2-9814c0025850.png)
+
+
+
+```python
+import collections
+
+def bfs(map, a, b):
+    q = collections.deque()
+    union = set()
+    q.append((a, b))
+    while q:
+        x, y = q.popleft()
+        visit[x][y] = True
+        for i in range(4):
+            nx, ny = x+dx[i], y+dy[i]
+            # 경계조건 + 방문확인
+            if 0 <= nx < N and 0 <= ny < N and not visit[nx][ny]:
+                # 국경선 open/close 조건
+                if L <= abs(map[x][y] - map[nx][ny]) <= R:
+                    # set.update(리스트) : 없는 항목만 set에 추가
+                    union.update([(x, y), (nx, ny)])
+                    q.append((nx, ny))
+    return union
+
+
+dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
+
+for _ in range(int(input())):
+    N, L, R = map(int, input().split())
+    arr = [list(map(int, input().split())) for _ in range(N)]
+
+    day = 0
+    while True:
+        visit = [[False]*N for _ in range(N)]
+        results = []
+        for i in range(N):
+            for j in range(N):
+                if not visit[i][j]:
+                    results.append(bfs(arr, i, j))
+
+        # total = 0 을 여기에 두고 돌리는 실수를 해서 계속 틀림
+        for result in results:
+            total = 0
+            if result:
+                # 연합국 안에서 평균값 구하고
+                for a, b in result:
+                    total += arr[a][b]
+                avg = total // len(result)
+                
+                # 국가별 인구를 평균값으로 변경
+                for a, b in result:
+                    arr[a][b] = avg
+
+        # 인구이동 종료조건
+        if len(results) == N*N: break
+
+        day += 1
+    print(day)
+```
+
+
+
+
+
+## 스타트와 링크
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/75406860-e9089480-5954-11ea-8c78-c07c20ea060b.png)
+
+
+
+```python
+from itertools import combinations
+
+for _ in range(int(input())):
+    N = int(input())
+    arr = [list(map(int, input().split())) for _ in range(N)]
+    member = list(range(N))
+
+    Min = 999999    
+    # 팀을 두 개로 나누기 (조합)
+    for group1 in combinations(member, N // 2):
+        group2 = list(set(member) - set(group1))
+
+        # 1팀, 2팀 능력치 계산
+        team_1, team_2 = 0, 0
+        for i, j in combinations(group1, 2):
+            team_1 += arr[i][j] + arr[j][i]
+        for i, j in combinations(group2, 2):
+            team_2 += arr[i][j] + arr[j][i]
+        Min = min(Min, abs(team_1 - team_2))
+
+    print(Min)
+```
+
+
+
 
 
 ## 연구소
@@ -666,5 +769,45 @@ backtrack(0)
 123123 => 길이 6, 2자리 비교, 좋은 수열
 
 123123 => 길이 6, 3자리 비교, 나쁜 수열
+```
+
+
+
+
+
+## 수영장
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/75517419-f9e30400-5a41-11ea-8277-e5cb52ea22cb.png)
+
+
+
+```python
+def swim(price, date):
+    global Min
+    if date >= 12:
+        Min = min(Min, price)
+        return
+
+    # 해당하는 달에 이용 계획이 없으면 다음달로 넘어감
+    if not schedule[date]:
+        swim(price, date+1)
+
+    # 이용 계획이 있는 경우 백트래킹 진행
+    else:
+        swim(price + day*schedule[date], date+1)
+        swim(price + month, date+1)
+        swim(price + month_3, date+3)
+
+for tc in range(1, int(input())+1):
+    day, month, month_3, year = list(map(int, input().split()))
+    schedule = list(map(int, input().split()))
+
+    # 일년치 결제하는 것보다 더 많이 나올 수 없음
+    Min = year
+    swim(0, 0)
+
+    print('#{} {}'.format(tc, Min))
 ```
 
