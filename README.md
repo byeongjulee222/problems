@@ -616,6 +616,47 @@ for _ in range(int(input())):
 
 
 
+## 치킨배달
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/75611652-c1d1e300-5b5f-11ea-8f9d-4c3e7f578beb.png)
+
+
+
+```python
+# 치킨집 하나에 여러집이 연결될 수 있다.
+from itertools import combinations
+
+for _ in range(int(input())):
+    N, M = map(int, input().split())
+    arr = [list(map(int, input().split())) for _ in range(N)]
+    home = []
+    chicken = []
+    for i in range(N):
+        for j in range(N):
+            if arr[i][j] == 1:
+                home.append((i, j))
+            elif arr[i][j] == 2:
+                chicken.append((i, j))
+    
+    ans = 0xfffffff
+    for chick in combinations(chicken, M):
+        # 각 경우마다 res값 0부터 시작
+        res = 0
+        for home_x, home_y in home:
+            Min = 0xfffffff
+            # 각 집에서 가장 가까운 치킨집 거리 저장
+            for chick_x, chick_y in chick:
+                Min = min(Min, abs(home_x-chick_x)+abs(home_y-chick_y))
+            res += Min
+        ans = min(res, ans)
+    
+    print(ans)
+```
+
+
+
 
 
 ## 연산자 끼워넣기
