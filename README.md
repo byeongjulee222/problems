@@ -14,8 +14,8 @@
 | [16234.인구이동][BOJ16234]                 [<문제보기>](#인구이동) | BOJ       | BFS, set.update() 활용 |
 | [14889.스타트와 링크][BOJ14889]        [<문제보기>](#스타트와-링크) | BOJ       | 조합                   |
 | [14502.연구소][BOJ14502]                     [<문제보기>](#연구소) | BOJ       | 조합, BFS or DFS       |
-| [14501.퇴사][BOJ14501]                         [<문제보기>](#퇴사) | BOJ       |                        |
-| [15686.치킨배달][BOJ15686]                 [<문제보기>](#치킨배달) | BOJ       |                        |
+| [14501.퇴사][BOJ14501]                         [<문제보기>](#퇴사) | BOJ       | 예                     |
+| [15686.치킨배달][BOJ15686]                 [<문제보기>](#치킨배달) | BOJ       | 조합                   |
 | [14888.연산자 끼워넣기][BOJ14888]     [<문제보기>](#연산자-끼워넣기) | BOJ       | 백트래킹               |
 | [17471.게리맨더링][BOJ17471]             [<문제보기>](#게리맨더링) | BOJ       |                        |
 | [17070.파이프 옮기기1][BOJ17070]      [<문제보기>](#파이프-옮기기1) | BOJ       |                        |
@@ -615,6 +615,35 @@ for _ in range(int(input())):
 
     print(Max)
 ```
+
+
+
+## 퇴사
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/75701737-9d107380-5cf7-11ea-8430-1bd85c23b400.png)
+
+
+
+```python
+for _ in range(int(input())):
+    N = int(input())
+    arr = [list(map(int, input().split())) for _ in range(N)]
+    compare = [0] * N
+
+    for i in range(N):
+        if i + arr[i][0] <= N:
+            compare[i] = arr[i][1]
+            for j in range(i):
+                # 날짜 범위 안에서
+                if j + arr[j][0] <= i:
+                    # i번까지 올 때 최대 = max(i번의 크기 vs i번까지의 합)
+                    compare[i] = max(compare[i], compare[j] + arr[i][1])
+    print(max(compare))
+```
+
+
 
 
 
