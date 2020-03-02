@@ -28,3 +28,22 @@ for tc in range(1, int(input())+1):
     swim(0, 0)
 
     print('#{} {}'.format(tc, Min))
+
+
+def fff(n, k, s, M):
+    global cnt
+    if s == M:
+        cnt += 1
+        # print(cnt)
+        return
+    elif n == k:
+        return
+    else:
+        # 해당 원소를 합하는 경우, 합하지 않는 경우 둘다 고려
+        fff(n+1, k, s+A[n], M)
+        fff(n+1, k, s, M)
+
+A = [1, 2, 3, 4, 5, 6]
+cnt = 0
+fff(0, len(A), 0, 5)
+print(cnt)

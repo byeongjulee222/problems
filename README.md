@@ -42,9 +42,11 @@
 | 2105.디저트카페                [<문제보기>](#디저트카페)     | SWEA      |                        |
 | 5650.핀볼 게임                   [<문제보기>](#핀볼-게임)    | SWEA      |                        |
 | 5656.벽돌깨기                    [<문제보기>](#벽돌깨기)     | SWEA      |                        |
+| 4008. 숫자만들기               [<문제보기>](#숫자만들기)     |           |                        |
 | --------------------------------                             | --------- | -----------            |
 | 그 외                                                        |           |                        |
 | 2611.좋은수열                    [<문제보기>](#좋은수열)     |           |                        |
+|                                                              |           |                        |
 
 [BOJ12100]: https://www.acmicpc.net/problem/12100
 [BOJ14503]: https://www.acmicpc.net/problem/14503
@@ -855,3 +857,94 @@ for tc in range(1, int(input())+1):
     print('#{} {}'.format(tc, Min))
 ```
 
+
+
+## 숫자만들기
+
+![image](https://user-images.githubusercontent.com/52685247/75648739-550c3500-5c94-11ea-8a62-26a3929767b9.png)
+
+
+
+```python
+def cal(res, cnt, plus, minus, mul, div):
+    global Max, Min
+    if cnt == N:
+        Max = max(Max, res)
+        Min = min(Min, res)
+
+    if plus:
+        cal(res+arr[cnt], cnt+1, plus-1, minus, mul, div)
+    if minus:
+        cal(res-arr[cnt], cnt+1, plus, minus-1, mul, div)
+    if mul:
+        cal(res*arr[cnt], cnt+1, plus, minus, mul-1, div)
+    if div:
+        cal(int(res/arr[cnt]), cnt+1, plus, minus, mul, div-1)
+
+
+for tc in range(1, int(input())+1):
+    N = int(input())
+    plus, minus, mul, div = map(int, input().split())
+    arr = list(map(int, input().split()))
+
+    Max = -999999999
+    Min = 999999999
+    cal(arr[0], 1, plus, minus, mul, div)
+    print(f'#{tc} {Max-Min}')
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+```python
+def f(n, k):
+    if n==k: # b의 모든 칸이 결정됨
+        for i in range(k):
+            if b[i] == 1:
+                print(b[i], end='')
+        print()
+    else:
+        pass
+```
+
+
+
+결정이 되었으면 출력
+
+
+
+부분집합 원소의 합
+
+
+
+```python
+def f(n, k, s):
+    if n==k:
+        print(s)
+    else:
+        f(n+1, k, s+A[n])
+        f(n+1, k, s)
+```
+
+
+
+문제를 보고 상태 트리를 만들어보는 연습
