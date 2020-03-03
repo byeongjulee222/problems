@@ -42,7 +42,8 @@
 | 2105.디저트카페                [<문제보기>](#디저트카페)     | SWEA      |                        |
 | 5650.핀볼 게임                   [<문제보기>](#핀볼-게임)    | SWEA      |                        |
 | 5656.벽돌깨기                    [<문제보기>](#벽돌깨기)     | SWEA      |                        |
-| 4008. 숫자만들기               [<문제보기>](#숫자만들기)     |           |                        |
+| 4008. 숫자만들기               [<문제보기>](#숫자만들기)     | SWEA      | 백트래킹               |
+| 1861. 정사각형 방              [<문제보기>](#정사각형-방)    | SWEA      | DP                     |
 | --------------------------------                             | --------- | -----------            |
 | 그 외                                                        |           |                        |
 | 2611.좋은수열                    [<문제보기>](#좋은수열)     |           |                        |
@@ -890,6 +891,8 @@ for tc in range(1, int(input())+1):
 
 ## 숫자만들기
 
+[목록](#목록)
+
 ![image](https://user-images.githubusercontent.com/52685247/75648739-550c3500-5c94-11ea-8a62-26a3929767b9.png)
 
 
@@ -921,6 +924,50 @@ for tc in range(1, int(input())+1):
     cal(arr[0], 1, plus, minus, mul, div)
     print(f'#{tc} {Max-Min}')
 ```
+
+
+
+
+
+## 정사각형 방
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/75756362-dedeff80-5d73-11ea-8669-d1d2a66aff47.png)
+
+
+
+```python
+for tc in range(1, int(input())+1):
+    N = int(input())
+    arr = [list(map(int, input().split())) for _ in range(N)]
+    
+    # 정답 후보들을 배열에 저장한다고 생각
+    ans = [0 for _ in range(N**2)]
+
+    dx, dy = [0, 0, -1, 1], [-1, 1, 0, 0]
+    for i in range(N):
+        for j in range(N):
+            for k in range(4):
+                nx, ny = i+dx[k], j+dy[k]
+                # 이동할 수 있으면 1을 저장
+                if 0 <= nx < N and 0 <= ny < N and arr[i][j] + 1 == arr[nx][ny]:
+                    ans[arr[i][j]] = 1
+                    # 그 방향으로 이동할 수 있으면 다른 방향은 검색할 필요 없음.
+                    # 배열안의 모든 값은 서로 다른 값이기 때문
+                    break
+
+    # 시작점을 출력하기 위해 뒤에서부터 탐색
+    for i in range(N**2-1, -1, -1):
+        # 이동할 수 있는 값이 연속된다면 값을 누적해간다
+        if ans[i] and ans[i-1]:
+            ans[i-1] += ans[i]
+
+    # .index를 하면 해당하는 값 중 index값이 작은 것을 출력한다.
+    print('#{} {} {}'.format(tc, ans.index(max(ans)), max(ans)+1))
+```
+
+
 
 
 
