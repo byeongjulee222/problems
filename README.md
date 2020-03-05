@@ -44,7 +44,8 @@
 | 5656.벽돌깨기                    [<문제보기>](#벽돌깨기)     | SWEA      |                        |
 | 4008. 숫자만들기               [<문제보기>](#숫자만들기)     | SWEA      | 백트래킹               |
 | 1861. 정사각형 방              [<문제보기>](#정사각형-방)    | SWEA      | DP                     |
-| 1865. 동철이의 일 분배     [<문제보기>](#동철이의-일-분배)   | ㄴ        | 백트래킹               |
+| 1865. 동철이의 일 분배     [<문제보기>](#동철이의-일-분배)   | SWEA      | 백트래킹               |
+| 2819. 격자판의 숫자 이어붙이기 [<문제보기>](#격자판의-숫자-이어붙이기) | A         |                        |
 | --------------------------------                             | --------- | -----------            |
 | 그 외                                                        |           |                        |
 | 2611.좋은수열                    [<문제보기>](#좋은수열)     |           |                        |
@@ -1015,6 +1016,42 @@ for tc in range(1, int(input())+1):
     distrib(0)
     print('#{} {:.6f}'.format(tc, Max*100))
 ```
+
+
+
+## 격자판의 숫자 이어붙이기
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/75940038-48275580-5ecf-11ea-8b46-01c1e23b49b0.png)
+
+
+
+```python
+dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
+
+def find(x, y, word):
+    if len(word) == 7:
+        nums.add(word)
+        return
+
+    for i in range(4):
+        nx, ny = x+dx[i], y+dy[i]
+        if 0 <= nx < 4 and 0 <= ny < 4:
+            find(nx, ny, word+str(arr[nx][ny]))
+
+for tc in range(1, int(input())+1):
+    arr = [list(map(int, input().split())) for _ in range(4)]
+    nums = set()
+
+    for i in range(4):
+        for j in range(4):
+            find(i, j, str(arr[i][j]))
+
+    print('#{} {}'.format(tc, len(nums)))
+```
+
+
 
 
 
