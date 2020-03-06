@@ -1,5 +1,30 @@
-import sys; sys.stdin = open('txt/BJ_17471.txt', 'r')
+import sys; sys.stdin = open('txt/17471_게리맨더링.txt', 'r')
+from itertools import combinations
 
+for _ in range(int(input())):
+    N = int(input())
+    people = [0] + list(map(int, input().split()))
+    G = [[] for _ in range(N+1)]
+    for i in range(1, N+1):
+        G[i] = list(map(int, input().split()))[1:]
+    # print(G)
+
+    arr = list(range(1, N+1))
+    for comb in combinations(arr, N//2):
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
 def dfs(v, group, visit):
     visit[v] = True
     for w in G[v]:
@@ -45,3 +70,4 @@ for tc in range(1, int(input())+1):
 
     if ans == 1000: ans = -1
     print(ans)
+'''
