@@ -17,7 +17,7 @@
 | [14501.퇴사][BOJ14501]                         [<문제보기>](#퇴사) | BOJ       | DP                     |
 | [15686.치킨배달][BOJ15686]                 [<문제보기>](#치킨배달) | BOJ       | 조합                   |
 | [14888.연산자 끼워넣기][BOJ14888]     [<문제보기>](#연산자-끼워넣기) | BOJ       | 백트래킹               |
-| [17471.게리맨더링][BOJ17471]             [<문제보기>](#게리맨더링) | BOJ       |                        |
+| [17471.게리맨더링][BOJ17471]             [<문제보기>](#게리맨더링) | BOJ       | DFS                    |
 | [17070.파이프 옮기기1][BOJ17070]      [<문제보기>](#파이프-옮기기1) | BOJ       |                        |
 | [15683.감시][BOJ15683]                         [<문제보기>](#감시) | BOJ       |                        |
 | [17135.캐슬디펜스][BOJ17135]             [<문제보기>](#캐슬디펜스) | BOJ       |                        |
@@ -734,6 +734,67 @@ for _ in range(int(input())):
 
 
 
+## 게리맨더링
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/76139154-12ca6580-6091-11ea-9f94-34f16c4d13a8.png)
+
+
+
+```python
+from itertools import combinations
+
+def dfs(start, group):
+    visit[start] = True
+    for way in G[start]:
+        if way in group and not visit[way]:
+            dfs(way, group)
+
+for tc in range(int(input())):
+    N = int(input())
+    people = [0] + list(map(int, input().split()))
+    G = [[] for _ in range(N+1)]
+    for i in range(1, N+1):
+        G[i] = list(map(int, input().split()))[1:]
+    # print(G)
+    arr = list(range(1, N+1))
+    Min = 0xffffff
+    # 두 그룹으로 나누기
+    # k: 첫 그룹에 몇 개를 넣을지
+    for k in range(1, N//2+1):
+        for comb in combinations(arr, k):
+            A = list(comb)
+            B = []
+            for i in arr:
+                if i not in A:
+                    B.append(i)
+            # print(A, B)
+            
+            # 모두 방문했으면 모두 연결 가능한 상태이다.
+            visit = [False for _ in range(N+1)]
+            dfs(A[0], A)
+            if len(A) != visit.count(True): continue
+
+            visit = [False for _ in range(N+1)]
+            dfs(B[0], B)
+            if len(B) != visit.count(True): continue
+
+            sum_A, sum_B = 0, 0
+            for i in A:
+                sum_A += people[i]
+            for i in B:
+                sum_B += people[i]
+            Min = min(Min, abs(sum_A-sum_B))
+            
+    # 두 그룹으로 나눌 수 없다 == Min 값이 변하지 않았다
+    print(-1 if Min == 0xffffff else Min)
+```
+
+
+
+
+
 ## 로봇청소기
 
 [목록](#목록)
@@ -784,6 +845,47 @@ for _ in range(int(input())):
 ```
 
  
+
+## 촌수계산
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/76139887-32b15780-6098-11ea-9b1b-2549163cd12a.png)
+
+
+
+```python
+import collections
+
+def bfs(v):
+    q = collections.deque()
+    visit = [False]*(n+1)
+    q.append(v)
+    visit[v] = True
+    level = 0
+    while q:
+        for _ in range(len(q)):
+            v = q.popleft()
+            if v == end:
+                return level
+            for e in G[v]:
+                if not(visit[e]):
+                    visit[e] = True
+                    q.append(e)
+        level += 1
+    return -1
+
+n = int(input())
+start, end = map(int, input().split())
+m = int(input())
+G = [[] for _ in range(n + 1)]
+for _ in range(m):
+    a, b = map(int, input().split())
+    G[a].append(b)
+    G[b].append(a)
+
+print(bfs(start))
+```
 
 
 
