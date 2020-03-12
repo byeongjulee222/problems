@@ -29,14 +29,14 @@
 | [17142.연구소3][BOJ17142]                   [<문제보기>](#연구소3) | BOJ       |                        |
 | [2146.다리만들기][BOJ2146]               [<문제보기>](#다리만들기) | BOJ       |                        |
 | [17472.다리만들기2][BOJ17472]           [<문제보기>](#다리만들기2) | BOJ       |                        |
-| [2644.촌수계산][BOJ2644]                   [<문제보기>](#촌수계산) | BOJ       | F                      |
+| [2644.촌수계산][BOJ2644]                   [<문제보기>](#촌수계산) | BOJ       | BFS                    |
 | [2479.경로찾기][BOJ2479]                   [<문제보기>](#경로찾기) | BOJ       |                        |
 | [1726.로봇][BOJ1726]                           [<문제보기>](#로봇) | BOJ       |                        |
 | [10711.모래성][BOJ10711]                     [<문제보기>](#모래성) | BOJ       | SWEA 1907.모래성 쌓기  |
 | --------------------------------                             | --------- | -----------            |
 | 1867.프로세서 연결하기   [<문제보기>](#프로세서-연결하기)    | SWEA      |                        |
 | 1949.등산로조성                [<문제보기>](#등산로조성)     | SWEA      |                        |
-| 1953.탈주범검거                [<문제보기>](#탈주범검거)     | SWEA      |                        |
+| 1953.탈주범검거                [<문제보기>](#탈주범-검거)    | SWEA      | DFS, 이동조건          |
 | [1952.수영장](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PpFQaAQMDFAUq)                        [<문제보기>](#수영장) | SWEA      | 백트래킹               |
 | 2382.미생물격리                [<문제보기>](#미생물격리)     | SWEA      |                        |
 | 2105.디저트카페                [<문제보기>](#디저트카페)     | SWEA      |                        |
@@ -948,6 +948,63 @@ backtrack(0)
 
 123123 => 길이 6, 3자리 비교, 나쁜 수열
 ```
+
+
+
+## 탈주범 검거
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/76542234-09ddf780-64c8-11ea-8a2e-aea98a3fb413.png)
+
+
+
+```python
+import collections
+
+def move(r, c, t):
+    global cnt
+    Q = collections.deque()
+    Q.append((r, c, t))
+    visit[r][c] = True
+    while Q:
+        rr, cc, tt = Q.popleft()
+        # 제한 시간 안에서만 돌도록
+        if tt < L:
+            # 현재 위치에서의 파이프의 방향
+            for a, b in pipe[arr[rr][cc]]:
+                # 경계조건
+                if 0 <= rr+a < N and 0 <= cc+b < M:
+                    # 탐색하는 위치에 파이프가 없으면 컨티뉴
+                    if not arr[rr+a][cc+b]: continue
+                    # 탐색하는 위치의 파이프 모양을 보고 이동할 수 있는지 판단
+                    if not visit[rr+a][cc+b] and (-1 * a, -1 * b) in pipe[arr[rr+a][cc+b]]:
+                        cnt += 1
+                        visit[rr+a][cc+b] = True
+                        Q.append((rr+a, cc+b, tt+1))
+
+for tc in range(1, int(input())+1):
+    N, M, R, C, L = map(int, input().split())
+    arr = [list(map(int, input().split())) for _ in range(N)]
+
+    # 파이프별로 이동할 수 있는 방향을 저장
+    pipe = {
+        1: [(0, -1), (0, 1), (-1, 0), (1, 0)],
+        2: [(-1, 0), (1, 0)],
+        3: [(0, -1), (0, 1)],
+        4: [(-1, 0), (0, 1)],
+        5: [(1, 0), (0, 1)],
+        6: [(1, 0), (0, -1)],
+        7: [(-1, 0), (0, -1)]
+    }
+
+    visit = [[False]*M for _ in range(N)]
+    cnt = 1
+    move(R, C, 1)
+    print(cnt)
+```
+
+
 
 
 
