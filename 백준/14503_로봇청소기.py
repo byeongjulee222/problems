@@ -1,4 +1,5 @@
 import sys;sys.stdin = open('txt/14503_로봇청소기.txt', 'r')
+# 청소하는 칸의 개수 출력
 
 # 북 동 남 서
 dx = [-1, 0, 1, 0]
@@ -14,23 +15,26 @@ def clean(x, y, d, cnt):
         ny = y+dy[ndir]
         # 진행하는 방향이 청소할 수 있는 곳이면
         # 이동해서 청소 (위치, 방향 바꾸고 cnt+1)
-        # 경계 체크
         if 0 <= nx < N and 0 <= ny < M:
-            # 벽 or 방문한 곳 체크
             if not arr[nx][ny] and not visit[nx][ny]:
                 clean(nx, ny, ndir, cnt+1)
                 return
 
     # 네 방향 다 체크하며 clean이 모두 동작한 후
     # 처음 보던 방향의 반대(-) 방향 체크
-    # 비어있다면 후진
-    if not arr[x-dx[d]][y-dy[d]]:
-        clean(x-dx[d], y-dy[d], d, cnt)
-
-    # 벽이라면 끝낸다
-    else:
+    # 뒤쪽 방향이 벽이라면 끝낸다
+    if arr[x-dx[d]][y-dy[d]]:
         print(cnt)
         return
+    # 벽이 아니라면 방향 그대로하고 위치만 뒤로(후진)
+    else:
+        clean(x-dx[d], y-dy[d], d, cnt)
+
+    # 뒤쪽 확인하는 약간 무식한 방법
+    # if arr[x+dx[(d+2)%4]][y+dy[(d+2)%4]]:
+    #     return
+    # else:
+    #     clean(x+dx[(d+2)%4], y+dy[(d+2)%4], d)
 
 
 for _ in range(int(input())):
@@ -40,6 +44,21 @@ for _ in range(int(input())):
     visit = [[False]*M for _ in range(N)]
     # 현재 위치 청소하기 때문에 cnt = 1 부터 시작
     clean(loc_x, loc_y, head, 1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

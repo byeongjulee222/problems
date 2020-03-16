@@ -831,8 +831,15 @@ def clean(x, y, d, cnt):
     if arr[x-dx[d]][y-dy[d]]:
         print(cnt)
         return
+    # 벽이 아니라면 방향 그대로하고 위치만 뒤로(후진)
     else:
         clean(x-dx[d], y-dy[d], d, cnt)
+    
+    # 뒤쪽 확인하는 약간 무식한 방법 
+    # if arr[x+dx[(d+2)%4]][y+dy[(d+2)%4]]:
+    #     return
+    # else:
+    #     clean(x+dx[(d+2)%4], y+dy[(d+2)%4], d)
 
 
 for _ in range(int(input())):
