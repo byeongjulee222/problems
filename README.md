@@ -39,7 +39,7 @@
 | 1953.탈주범검거                [<문제보기>](#탈주범-검거)    | SWEA      | DFS, 이동조건          |
 | [1952.수영장](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PpFQaAQMDFAUq)                        [<문제보기>](#수영장) | SWEA      | 백트래킹               |
 | 2382.미생물격리                [<문제보기>](#미생물격리)     | SWEA      |                        |
-| 2105.디저트카페                [<문제보기>](#디저트카페)     | SWEA      |                        |
+| 2105.디저트 카페                [<문제보기>](#디저트-카페)   | SWEA      | 백트래킹               |
 | 5650.핀볼 게임                   [<문제보기>](#핀볼-게임)    | SWEA      |                        |
 | 5656.벽돌깨기                    [<문제보기>](#벽돌깨기)     | SWEA      |                        |
 | 4008. 숫자만들기               [<문제보기>](#숫자만들기)     | SWEA      | 백트래킹               |
@@ -1055,6 +1055,50 @@ for tc in range(1, int(input())+1):
 
     print('#{} {}'.format(tc, Min))
 ```
+
+
+
+## 디저트 카페
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/76915040-5d54a900-68ff-11ea-9c24-b9f6f9bc4c9c.png)
+
+
+
+```python
+dir = [(1, 1), (1, -1), (-1, -1), (-1, 1)]
+def find(x, y, cnt, check):
+    global Max
+    if cnt == 4: return
+
+    nx, ny = x+dir[cnt][0], y+dir[cnt][1]
+    if 0 <= nx < N and 0 <= ny < N:
+        if nx == i and ny == j and Max <= len(check):
+            Max = len(check)
+            return
+
+        if cafes[nx][ny] not in check:
+            check.append(cafes[nx][ny])
+            find(nx, ny, cnt, check)
+            find(nx, ny, cnt+1, check)
+            check.pop()
+
+
+for tc in range(1, int(input())+1):
+    N = int(input())
+    cafes = [list(map(int, input().split())) for _ in range(N)]
+
+    Max = -1
+    for i in range(N):
+        for j in range(N):
+            check = []
+            find(i, j, 0, [cafes[i][j]])
+
+    print('#{} {}'.format(tc, Max))
+```
+
+
 
 
 
