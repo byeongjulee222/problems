@@ -47,6 +47,7 @@
 | 1865. 동철이의 일 분배     [<문제보기>](#동철이의-일-분배)   | SWEA      | 백트래킹               |
 | 2819. 격자판의 숫자 이어붙이기 [<문제보기>](#격자판의-숫자-이어붙이기) | SWEA      | 완전탐색               |
 | 3752.가능한 시험점수       [<문제풀이>](#가능한-시험점수)    | SWEA      | 생각?                  |
+| 1486.장훈이의 높은 선반  [<문제풀이>](#장훈이의-높은-선반)   |           |                        |
 | --------------------------------                             | --------- | -----------            |
 | 그 외                                                        |           |                        |
 | 2611.좋은수열                    [<문제보기>](#좋은수열)     |           |                        |
@@ -1314,7 +1315,34 @@ for tc in range(1, int(input())+1):
 
 
 
+## 장훈이의 높은 선반
 
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/77061815-34770580-6a1e-11ea-8385-b9e6ec832d99.png)
+
+
+
+```python
+# 모든 경우의 가지치기를 해보고 최소값을 출력
+def find(height, num):
+    # 선반의 물건을 꺼낼 수 있는 높이라면 result에 추가
+    if height >= B:
+        result.append(height)
+    if num == N: return
+
+    # 더하고 진행
+    find(height+arr[num], num+1)
+    # 더하지 않고 진행
+    find(height, num+1)
+
+for tc in range(1, int(input())+1):
+    N, B = map(int, input().split())
+    arr = list(map(int, input().split()))
+    result = []
+    find(0, 0)
+    print('#{} {}'.format(tc, min(result)-B))
+```
 
 
 
