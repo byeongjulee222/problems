@@ -45,13 +45,13 @@ for _ in range(int(input())):
             total = 0
             if result:
                 # 연합국 안에서 평균값 구하고
-                for a, b in result:
-                    total += arr[a][b]
+                for arr, b in result:
+                    total += arr[arr][b]
                 avg = total // len(result)
                 
                 # 국가별 인구를 평균값으로 변경
-                for a, b in result:
-                    arr[a][b] = avg
+                for arr, b in result:
+                    arr[arr][b] = avg
 
         # 인구이동 종료조건
         if len(results) == N*N: break

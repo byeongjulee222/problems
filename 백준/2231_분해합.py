@@ -2,7 +2,7 @@ N = int(input())
 last = 0
 for i in range(N):
     # print('i: ', i)
-    a = i
+    arr = i
     result = 0
     while i:
         b = i % 10
@@ -10,8 +10,8 @@ for i in range(N):
         i //= 10
         # print(i)
     # print('result+i : ', result + a)
-    if result + a == N:
-        last = a
+    if result + arr == N:
+        last = arr
         break
 
 print(last)

@@ -12,9 +12,9 @@ N = int(input())
 M = int(input())
 arr = [[] for _ in range(N+1)]
 for i in range(M):
-    a, b = map(int, input().split())
-    arr[a].append(b)
-    arr[b].append(a)
+    arr, b = map(int, input().split())
+    arr[arr].append(b)
+    arr[b].append(arr)
 # print(arr)
 
 visit = [False for _ in range(N+1)]

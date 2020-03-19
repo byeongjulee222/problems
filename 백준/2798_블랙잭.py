@@ -6,8 +6,8 @@ arr = list(map(int, input().split()))
 # print(arr)
 result = []
 # print(list(combinations(arr, 3)))
-for a in combinations(arr, 3):
-    if sum(a) <= M:
-        result.append(sum(a))
+for arr in combinations(arr, 3):
+    if sum(arr) <= M:
+        result.append(sum(arr))
 
 print(max(result))

@@ -29,13 +29,13 @@ for _ in range(N):
     arr.append(list(input()))
 c = 0
 Min = 0xffffff
-for a in range(N-7):
+for arr in range(N - 7):
     for b in range(M-7):
         cnt_A, cnt_B = 0, 0
         for i in range(8):
             for j in range(8):
-                if A[i][j] != arr[a+i][b+j]: cnt_A += 1
-                if B[i][j] != arr[a+i][b+j]: cnt_B += 1
+                if A[i][j] != arr[arr + i][b + j]: cnt_A += 1
+                if B[i][j] != arr[arr + i][b + j]: cnt_B += 1
         # print('cnt_A :', cnt_A)
         # print('cnt_B :', cnt_B)
         # c += 1

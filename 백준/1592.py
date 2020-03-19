@@ -13,13 +13,13 @@ cnt = [0 for _ in range(N+1)]
 S = []
 S.append(1)
 while S:
-    a = S.pop(0)
-    if cnt[a] % 2:
-        S.append(a+2)
-        cnt[a+2] += 1
+    arr = S.pop(0)
+    if cnt[arr] % 2:
+        S.append(arr + 2)
+        cnt[arr + 2] += 1
         b = S.pop(0)
     else:
-        S.append(a-2)
+        S.append(arr - 2)
     S.append()
 
 

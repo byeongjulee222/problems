@@ -21,9 +21,9 @@ start, end = map(int, input().split())
 m = int(input())
 people = [[] for _ in range(n+1)]
 for _ in range(m):
-    a, b = map(int, input().split())
-    people[a].append(b)
-    people[b].append(a)
+    arr, b = map(int, input().split())
+    people[arr].append(b)
+    people[b].append(arr)
 print(people)
 
 visit = [False for _ in range(n+1)]
