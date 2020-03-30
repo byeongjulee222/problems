@@ -14,9 +14,9 @@ for tc in range(1, int(input())+1):
     ans = V
     for _ in range(E):
         u, v = map(int, input().split())
-        a = find_set(u); b = find_set(v)
-        if a == b: continue
-        p[b] = a
+        arr = find_set(u); b = find_set(v)
+        if arr == b: continue
+        p[b] = arr
         ans -= 1
         print(p)
     # print(p)
@@ -50,9 +50,9 @@ init()
 cnt, cur = V - 1, 0
 while cnt and cur <= V:
     u, v, w = Edge[cur]
-    a, b = find(u), find(v)
-    if a != b:
-        p[a] = b
+    arr, b = find(u), find(v)
+    if arr != b:
+        p[arr] = b
         MST.append((u, v, w))
         cnt -= 1
     cur += 1
