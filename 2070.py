@@ -2,11 +2,11 @@ import sys; sys.stdin = open("txt/2070.txt", "r")
 
 T = int(input())
 for tc in range(1, T+1):
-    a, b = map(int, input().split())
+    arr, b = map(int, input().split())
     c = ''
-    if a > b:
+    if arr > b:
         c = '>'
-    elif a < b:
+    elif arr < b:
         c = '<'
     else:
         c = '='

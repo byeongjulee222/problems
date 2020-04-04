@@ -2,10 +2,10 @@ import sys; sys.stdin = open('txt/D2_1945_소인수분해.txt', 'r')
 
 for tc in range(1, int(input())+1):
     N = int(input())
-    a = b = c = d = e = 0
+    arr = b = c = d = e = 0
     while N > 1:
         if not N % 2:
-            a += 1
+            arr += 1
             N //= 2
         if not N % 3:
             b += 1
@@ -20,4 +20,4 @@ for tc in range(1, int(input())+1):
             e += 1
             N //= 11
 
-    print('#{} {} {} {} {} {}'.format(tc, a, b, c, d, e))
+    print('#{} {} {} {} {} {}'.format(tc, arr, b, c, d, e))

@@ -8,11 +8,11 @@ square = [[0] * 101 for _ in range(101)]
 # 색종이 장 수만큼 반복
 for n in range(1, N+1):
     # 시작점(a, b), 가로 너비, 세로 너비
-    a, b, c, d = list(map(int, input().split()))
+    arr, b, c, d = list(map(int, input().split()))
     # 첫 번째 색종이 += 1, 두 번째 색종이 += 2, ...
     for i in range(c):
         for j in range(d):
-            square[a+i][b+j] = n
+            square[arr + i][b + j] = n
 
 # 결과값을 저장할 리스트 만들기
 result = [0] * N
