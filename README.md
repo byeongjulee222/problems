@@ -1,4 +1,8 @@
-## :one: A형 대비
+# :one: A형 대비
+
+- 소프트웨어 검정시험 대비 및 알고리즘 문제풀이 능력 향상을 위해 주기적으로 문제를 풀고 그 풀이를 정리해두기 위해 작성
+
+
 
 ## 목록
 
@@ -25,7 +29,7 @@
 | [14503.로봇청소기][BOJ14503]             [<문제보기>](#로봇청소기) | BOJ       | 재귀                    |
 | [16235.나무재테크][BOJ16235]             [<문제보기>](#나무재테크) | BOJ       |                         |
 | [17837.새로운게임2][BOJ17837]           [<문제보기>](#새로운게임2) | BOJ       |                         |
-| [12100.2048][BOJ12100]                        [<문제보기>](#2048) | BOJ       |                         |
+| [12100.2048][BOJ12100]                        [<문제보기>](#2048) | BOJ       | 트리?                   |
 | [17142.연구소3][BOJ17142]                   [<문제보기>](#연구소3) | BOJ       |                         |
 | [2146.다리만들기][BOJ2146]               [<문제보기>](#다리만들기) | BOJ       |                         |
 | [17472.다리만들기2][BOJ17472]           [<문제보기>](#다리만들기2) | BOJ       |                         |
@@ -50,8 +54,9 @@
 | 1486.장훈이의 높은 선반  [<문제풀이>](#장훈이의-높은-선반)   |           |                         |
 | --------------------------------                             | --------- | -----------             |
 | 그 외                                                        |           |                         |
-| 2611.좋은수열                    [<문제보기>](#좋은수열)     |           |                         |
-|                                                              |           |                         |
+| 2611.좋은수열                    [<문제보기>](#좋은수열)     | BOJ       |                         |
+| 12871.무한문자열              [<문제보기>](#무한-문자열)     | BOJ       |                         |
+| 1032.명령 프롬프트           [<문제보기>](#명령-프롬프트)    | BOJ       |                         |
 
 [BOJ12100]: https://www.acmicpc.net/problem/12100
 [BOJ14503]: https://www.acmicpc.net/problem/14503
@@ -287,7 +292,7 @@ print(result[-2])
 
 [목록](#목록)
 
-![image](https://user-images.githubusercontent.com/52685247/77088655-1cb47700-6a48-11ea-8af1-81f5c0ee3732.png)
+![image](https://user-images.githubusercontent.com/52685247/78500786-78df0100-7793-11ea-8576-a7a50bbf6fe1.png)
 
 
 
@@ -918,6 +923,100 @@ for _ in range(int(input())):
 
  
 
+## 2048
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/78500803-93b17580-7793-11ea-876f-abc3fca688c2.png)
+
+
+
+```python
+from collections import deque
+from copy import deepcopy
+
+N = int(input())
+arr = [list(map(int, input().split())) for _ in range(N)]
+ans = 0
+q = deque()
+
+def add(i, j):
+    # 값이 있으면 큐에 넣고 그 자리는 0
+    if arr[i][j]:
+        q.append(arr[i][j])
+        arr[i][j] = 0
+
+def merge(i, j, di, dj):
+    while q:
+        x = q.popleft()
+        # 비교하는 칸이 0이면 그 자리에 넣는다(자리 채우기)
+        if arr[i][j] == 0:
+            arr[i][j] = x
+        # 값이 같으면 합침
+        elif arr[i][j] == x:
+            arr[i][j] *= 2
+            i, j = i+di, j+dj
+        # 값이 다르면 그대로 넣고 i, j만 수정
+        else:
+            arr[i+di][j+dj] = x
+            i, j = i+di, j+dj
+
+
+def move(i):
+    # 위로 밈
+    if i == 0:
+        for j in range(N):
+            for i in range(N):
+                add(i, j)
+            # di += 1로 위에서 아래로가면서 검사
+            merge(0, j, 1, 0)
+    # 아래로 밈
+    elif i == 1:
+        for j in range(N):
+            for i in range(N-1, -1, -1):
+                add(i, j)
+            merge(N-1, j, -1, 0)
+    # 왼쪽으로 밈
+    elif i == 2:
+        for i in range(N):
+            for j in range(N):
+                add(i, j)
+            merge(i, 0, 0, 1)
+    # 오른쪽으로 밈
+    else:
+        for i in range(N):
+            for j in range(N-1, -1, -1):
+                add(i, j)
+            merge(i, N-1, 0, -1)
+
+
+
+def solve(cnt):
+    global ans, arr
+    if cnt == 5:
+        for i in range(N):
+            ans = max(ans, max(arr[i]))
+            # print(arr)
+        return
+
+    box = deepcopy(arr)
+    for i in range(4):
+        move(i)
+        solve(cnt+1)
+        arr = deepcopy(box)
+
+solve(0)
+print(ans)
+```
+
+
+
+
+
+
+
+
+
 ## 촌수계산
 
 [목록](#목록)
@@ -1020,6 +1119,59 @@ backtrack(0)
 
 123123 => 길이 6, 3자리 비교, 나쁜 수열
 ```
+
+
+
+## 무한 문자열
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/78501766-32d86c00-7798-11ea-97ef-75b1215f63c8.png)
+
+```python
+a = input()
+b = input()
+
+if a*len(b) == b*len(a):
+    print(1)
+else:
+    print(0)
+```
+
+
+
+## 명령 프롬프트
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/78502325-97e19100-779b-11ea-96df-91f783ef7ad9.png)
+
+```python
+N = int(input())
+
+arr = []
+for i in range(N):
+    arr.append(input())
+# print(arr)
+
+compare = [[] for _ in range(len(arr[0]))]
+
+for word in arr:
+    for i in range(len(word)):
+        compare[i].append(word[i])
+# print(compare)
+
+ans = ''
+for words in compare:
+    if words.count(words[0]) == len(words):
+        ans += words[0]
+    else:
+        ans += '?'
+
+print(ans)
+```
+
+
 
 
 
