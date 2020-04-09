@@ -11,16 +11,13 @@ dir = [0,
        [[0, 1, 2, 3]]
        ]
 
-# val = 1, -1
-# val = True, False --> 이 경우 안되는 이유?
-
-
 def watch(x, y, lst, val):
     for d in lst:
         nx, ny = x+dx[d], y+dy[d]
         # 경계조건 + 벽이 아닌 조건
         while 0 <= nx < N and 0 <= ny < M and arr[nx][ny] != 6:
             visit[nx][ny] += val
+            # 그 방향으로 계속 진행
             nx, ny = nx+dx[d], ny+dy[d]
 
 
@@ -39,8 +36,10 @@ def backtrack(k, s):
         x, y, d = cctv[k]
         # 카메라 종류에 따라 볼 수 있는 방향 모두 체크
         for lst in dir[d]:
+            # 감시 가능한 곳이면 +1
             watch(x, y, lst, 1)
             backtrack(k+1, s)
+            # 탐색 끝났으면 돌아오면서 숫자 빼줌
             watch(x, y, lst, -1)
 
 for _ in range(int(input())):
