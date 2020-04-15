@@ -39,7 +39,7 @@
 | [10711.모래성][BOJ10711]                     [<문제보기>](#모래성) | BOJ       | SWEA 1907.모래성 쌓기   |
 | --------------------------------                             | --------- | -----------             |
 | 1867.프로세서 연결하기   [<문제보기>](#프로세서-연결하기)    | SWEA      |                         |
-| 1949.등산로조성                [<문제보기>](#등산로조성)     | SWEA      |                         |
+| 1949.등산로조성                [<문제보기>](#등산로조성)     | SWEA      | DFS                     |
 | 1953.탈주범검거                [<문제보기>](#탈주범-검거)    | SWEA      | DFS, 이동조건           |
 | [1952.수영장](https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PpFQaAQMDFAUq)                        [<문제보기>](#수영장) | SWEA      | 백트래킹                |
 | 2382.미생물격리                [<문제보기>](#미생물격리)     | SWEA      |                         |
@@ -1241,6 +1241,68 @@ print(ans)
 
 
 
+## 등산로 조성
+
+[목록](#목록)
+
+
+
+```python
+dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
+
+def move(x, y, cnt, chance):
+    global Max
+    visit[x][y] = True
+    for i in range(4):
+        nx, ny = x+dx[i], y+dy[i]
+        if 0 <= nx < N and 0 <= ny < N and not visit[nx][ny]:
+            # 높이가 낮아서 진행할 수 있으면 dfs 전진
+            if arr[nx][ny] < arr[x][y]:
+                move(nx, ny, cnt+1, chance)
+
+            # 전진할 수 없을 때 기회가 남아있으면
+            elif chance:
+                for cut in range(1, K+1):
+                    if arr[nx][ny] - cut < arr[x][y]:
+                        arr[nx][ny] -= cut
+                        move(nx, ny, cnt+1, 0)
+                        # dfs 끝까지 다 가봤으면 원상복구
+                        arr[nx][ny] += cut
+                        break
+
+    if Max < cnt: Max = cnt
+    visit[x][y] = False
+
+for tc in range(1, int(input())+1):
+    N, K = map(int, input().split())
+    arr = [list(map(int, input().split())) for _ in range(N)]
+    # print(arr)
+
+    high = 0
+    for i in range(N):
+        high = max(high, max(arr[i]))
+    # print(Max)
+
+    cand = []
+    for i in range(N):
+        for j in range(N):
+            if arr[i][j] == high:
+                cand.append((i, j))
+    # print(cand)
+    visit = [[False]*N for _ in range(N)]
+    chance = 1
+    Max = 0
+    for x, y in cand:
+        move(x, y, 1, 1)
+
+    print('#{} {}'.format(tc, Max))
+    # break
+```
+
+
+
+
+
 
 
 ## 탈주범 검거
@@ -1641,27 +1703,30 @@ for tc in range(1, int(input())+1):
 
 
 ```python
+# 탐색 방향을 오른쪽, 아래 먼저 --> 휴리스틱 최적화
+# Main Algorithm : 메모이제이션
 from collections import deque
 
-dx, dy = [0, 1, -1, 0], [1, 0, 0, -1]
+dx, dy = [1, 0, -1, 0], [0, 1, 0, -1]
 
 for tc in range(1, int(input())+1):
     N = int(input())
     arr = [list(map(int, input())) for _ in range(N)]
-
-    visit = [[-1] * N for _ in range(N)]
+    # print(arr)
+    visit = [[-1]* N for _ in range(N)]
+    # print(visit)
+    visit[0][0] = 0
     q = deque()
     q.append((0, 0))
-    visit[0][0] = 0
-
     while q:
         x, y = q.popleft()
         if x == N-1 and y == N-1: continue
-
+        # 그 위치까지 작업한 양을 cnt로 저장
         cnt = visit[x][y]
         for i in range(4):
             nx, ny = x+dx[i], y+dy[i]
             if 0 <= nx < N and 0 <= ny < N:
+                # 방문한 적이 없거나, 방문한 기록이 지금 진행 경로값보다 크다면 현재 경로값을 저장
                 if visit[nx][ny] == -1 or cnt + arr[nx][ny] < visit[nx][ny]:
                     visit[nx][ny] = cnt + arr[nx][ny]
                     q.append((nx, ny))
