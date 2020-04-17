@@ -4,6 +4,7 @@ from itertools import combinations
 def dfs(start, group):
     visit[start] = True
     for way in G[start]:
+        # 둘이 같은 그룹에 있는지 확인
         if way in group and not visit[way]:
             dfs(way, group)
 
@@ -25,7 +26,7 @@ for tc in range(int(input())):
             for i in arr:
                 if i not in A:
                     B.append(i)
-            # print(A, B)
+            print(A, B)
 
             # 모두 방문했으면 모두 연결 가능한 상태이다.
             visit = [False for _ in range(N+1)]
@@ -45,14 +46,6 @@ for tc in range(int(input())):
 
     # 두 그룹으로 나눌 수 없다 == Min 값이 변하지 않았다
     print(-1 if Min == 0xffffff else Min)
-
-
-
-
-
-
-
-
 
 
 '''
