@@ -6,6 +6,7 @@ from pprint import pprint
 # 배열 돌면서 덩어리 개수 찾기
 # 덩어리 개수가 2개 이상될 때 그만
 from collections import deque
+from copy import deepcopy
 
 import sys
 sys.setrecursionlimit(1000000)
@@ -30,6 +31,7 @@ def dfs(a, b):
         if 0 <= nx < Row and 0 <= ny < Col:
             if not visit[nx][ny] and arr[nx][ny] != 0:
                 dfs(nx, ny)
+                # visit[nx][ny] = True
     # return
 
 
@@ -39,40 +41,51 @@ def find(x, y):
         nx, ny = x+dx[a], y+dy[a]
         if 0 <= nx < Row and 0 <= ny < Col:
             if arr[nx][ny] == 0:
-                arr[x][y] -= 1
-                if arr[x][y] == 0: break
+                ocean_cnt[x][y] += 1
     # return
 
-for _ in range(int(input())):
-    Row, Col = map(int, input().split())
-    arr = [list(map(int, input().split())) for _ in range(Row)]
-    # print(arr)
-    dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
-    year = 0
+# for _ in range(int(input())):
+Row, Col = map(int, input().split())
+arr = [list(map(int, input().split())) for _ in range(Row)]
+# print(arr)
+dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
+year = 0
+num = 0
+while True:
+    if num >= 2: break
     num = 0
-    while True:
-        if num >= 2: break
-        num = 0
-        # visit = [[False] * Col for _ in range(Row)]
-        for i in range(1, Row-1):
-            for j in range(1, Col-1):
-                if arr[i][j] != 0:
-                    find(i, j)
-                    # arr[i][j] = max(arr[i][j], 0)
-        # pprint(arr)
+    # 바다와 접한 면 개수 세기
+    ocean_cnt = [[0]*Col for _ in range(Row)]
+    for i in range(1, Row-1):
+        for j in range(1, Col-1):
+            if arr[i][j] != 0:
+                find(i, j)
+                # arr[i][j] = max(arr[i][j], 0)
+    # pprint(arr)
 
-        visit = [[False] * Col for _ in range(Row)]
-        for i in range(1, Row-1):
-            for j in range(1, Col-1):
-                if not visit[i][j] and arr[i][j] != 0:
-                    dfs(i, j)
-                    # bfs(i, j)
-                    num += 1
-        # print('num: ', num)
-        # pprint(arr)
+    # 녹이는 작업
+    for i in range(Row):
+        for j in range(Col):
+            arr[i][j] -= ocean_cnt[i][j]
+            if arr[i][j] < 0: arr[i][j] = 0
 
-        year += 1
+    # 빙산 개수 세기
+    visit = [[False] * Col for _ in range(Row)]
+    for i in range(1, Row-1):
+        for j in range(1, Col-1):
+            if not visit[i][j] and arr[i][j] != 0:
+                # visit[i][j] = True
+                # dfs(i, j)
+                bfs(i, j)
+                num += 1
+    # print('num: ', num)
+    # pprint(arr)
 
-    print(year if num else 0)
+    year += 1
+
+print(year if num else 0)
 
 # 2, 19
+
+
+# 큐에 빙산 좌표 넣어놓고 뽑다가 더이상 못뽑을 때 그룹 수 += 1
