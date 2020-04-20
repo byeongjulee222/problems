@@ -1,4 +1,8 @@
 import sys; sys.stdin = open('txt/2580_스도쿠.txt', 'r')
+# 백트래킹 문제
+
+def backtrack():
+    pass
 
 numbers = [i for i in range(1, 10)]
 
