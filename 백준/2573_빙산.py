@@ -59,5 +59,3 @@ while True:
 
     # 다 돌았는데 안끝났으면 year += 1
     year += 1
-
-print(year)
