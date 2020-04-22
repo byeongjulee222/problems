@@ -58,7 +58,8 @@
 | 2611.좋은수열                    [<문제보기>](#좋은수열)     | BOJ       |                           |
 | 12871.무한문자열              [<문제보기>](#무한-문자열)     | BOJ       |                           |
 | 1032.명령 프롬프트           [<문제보기>](#명령-프롬프트)    | BOJ       |                           |
-| 3079. 입국심사                   [<문제보기>](#입국심사)     | BOJ       | 파라메트릭 서치(이분탐색) |
+| 3079.입국심사                   [<문제보기>](#입국심사)      | BOJ       | 파라메트릭 서치(이분탐색) |
+| 1149.RGB거리                   [<문제보기>](#RGB거리)        | ㅠ        |                           |
 
 [BOJ12100]: https://www.acmicpc.net/problem/12100
 [BOJ14503]: https://www.acmicpc.net/problem/14503
@@ -1847,6 +1848,26 @@ for _ in range(int(input())):
 ```
 
 
+
+## RGB거리
+
+[목록](#목록)
+
+
+
+![image](https://user-images.githubusercontent.com/52685247/79995439-2ff8ad80-84f2-11ea-94ca-708b689c70c3.png)
+
+```python
+N = int(input())
+arr = [list(map(int, input().split())) for _ in range(N)]
+
+for i in range(1, N):
+    arr[i][0] = min(arr[i-1][1], arr[i-1][2]) + arr[i][0]
+    arr[i][1] = min(arr[i-1][0], arr[i-1][2]) + arr[i][1]
+    arr[i][2] = min(arr[i-1][0], arr[i-1][1]) + arr[i][2]
+    # print(arr)
+print(min(arr[N-1]))
+```
 
 
 
