@@ -60,6 +60,9 @@
 | 1032.명령 프롬프트           [<문제보기>](#명령-프롬프트)    | BOJ       |                           |
 | 3079.입국심사                   [<문제보기>](#입국심사)      | BOJ       | 파라메트릭 서치(이분탐색) |
 | 1149.RGB거리                   [<문제보기>](#RGB거리)        | BOJ       |                           |
+| 2178.미로탐색                   [<문제보기>](#미로-탐색)     | BOJ       |                           |
+| 1110.더하기 사이클          [<문제보기>](#더하기-사이클)     | BOJ       |                           |
+| 13458.시험 감독               [<문제보기>](#시험-감독)       | BOJ       |                           |
 <<<<<<< HEAD
 =======
 | 2178.미로 탐색                  [<문제보기>](#미로-탐색)     | BOJ       | BFS                       |
@@ -1936,6 +1939,63 @@ print(bfs(0, 0, 1))
 ```
 
 
+
+
+
+## 더하기 사이클
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/80942306-6ce07080-8e1f-11ea-97e7-5b4293bd1d8f.png)
+
+
+
+```python
+for _ in range(int(input())):
+    num = input()
+    if len(num) == 1:
+        num = '0' + num
+    new_num = num
+    cnt = 0
+    while True:
+        # print(num)
+        new_num = new_num[-1] + str(int(new_num[0]) + int(new_num[1]))[-1]
+        cnt += 1
+        if num == new_num: break
+        # print(num, new_num)
+    # print(new_num)
+    print(cnt)
+```
+
+
+
+
+
+## 시험 감독
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/80946060-32c79c80-8e28-11ea-990e-99f4b5db9c18.png)
+
+
+
+```python
+# 각 방에 main은 무조건 한 명
+for _ in range(int(input())):
+    N = int(input())
+    people = list(map(int, input().split()))
+    main, sub = map(int, input().split())
+
+    for person in people:
+        person -= main
+        # if person: 으로 했다가 계속 틀림 // 음수도 if문 결과로 True가 나옴
+        if person > 0:
+            if person%sub:
+                N += person//sub + 1
+            else:
+                N += person // sub
+    print(N)
+```
 
 
 
