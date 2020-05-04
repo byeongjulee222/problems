@@ -60,6 +60,10 @@
 | 1032.명령 프롬프트           [<문제보기>](#명령-프롬프트)    | BOJ       |                           |
 | 3079.입국심사                   [<문제보기>](#입국심사)      | BOJ       | 파라메트릭 서치(이분탐색) |
 | 1149.RGB거리                   [<문제보기>](#RGB거리)        | BOJ       |                           |
+<<<<<<< HEAD
+=======
+| 2178.미로 탐색                  [<문제보기>](#미로-탐색)     | BOJ       | BFS                       |
+>>>>>>> 2b4d779fbd300a3f54a94d02fe37bd31532750b1
 
 [BOJ12100]: https://www.acmicpc.net/problem/12100
 [BOJ14503]: https://www.acmicpc.net/problem/14503
@@ -1868,6 +1872,72 @@ for i in range(1, N):
     # print(arr)
 print(min(arr[N-1]))
 ```
+
+
+
+## 미로 탐색
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/80308455-1e711780-880a-11ea-856e-b68742bf03d6.png)
+
+- **DFS로 풀면 시간초과**
+
+```python
+import collections
+
+dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
+
+def dfs(x, y, cnt):
+    global Min
+    if x == N-1 and y == M-1:
+        # print(x, y, cnt)
+        Min = min(cnt, Min)
+        return
+
+    for i in range(4):
+        nx, ny = x+dx[i], y+dy[i]
+        if 0 <= nx < N and 0 <= ny < M and not visit[nx][ny] and arr[nx][ny] == 1:
+            visit[nx][ny] = True
+            # print(nx, ny, cnt)
+            dfs(nx, ny, cnt+1)
+            visit[nx][ny] = False
+
+def bfs(x, y, cnt):
+    global Min
+    q = collections.deque()
+    q.append((x, y, cnt))
+    while q:
+        x, y, cnt = q.popleft()
+        if x == N-1 and y == M-1:
+            Min = min(Min, cnt)
+            break
+        for i in range(4):
+            nx, ny = x+dx[i], y+dy[i]
+            if 0 <= nx < N and 0 <= ny < M and not visit[nx][ny] and arr[nx][ny] == 1:
+                visit[nx][ny] = True
+                q.append((nx, ny, cnt+1))
+
+    return Min
+
+
+
+# for _ in range(int(input())):
+N, M = map(int, input().split())
+arr = [list(map(int, input())) for _ in range(N)]
+# print(arr)
+visit = [[False] * M for _ in range(N)]
+# print(visit)
+Min = N*M
+# dfs(0, 0, 1)
+# print(Min)
+
+print(bfs(0, 0, 1))
+```
+
+
+
+
 
 
 
