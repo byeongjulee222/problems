@@ -62,7 +62,8 @@
 | 1149.RGB거리                   [<문제보기>](#RGB거리)        | BOJ       |                           |
 | 2178.미로탐색                   [<문제보기>](#미로-탐색)     | BOJ       |                           |
 | 1110.더하기 사이클          [<문제보기>](#더하기-사이클)     | BOJ       |                           |
-| 13458.시험 감독               [<문제보기>](#시험-감독)       | BOJ       |                           |
+| 13458.시험 감독                [<문제보기>](#시험-감독)      | BOJ       |                           |
+| 4673.숫자 세기                  [<문제보기>](#셀프-넘버)     | BOJ       |                           |
 <<<<<<< HEAD
 =======
 | 2178.미로 탐색                  [<문제보기>](#미로-탐색)     | BOJ       | BFS                       |
@@ -1995,6 +1996,66 @@ for _ in range(int(input())):
             else:
                 N += person // sub
     print(N)
+```
+
+
+
+## 셀프 넘버
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/81054521-f2d4e800-8f01-11ea-99fb-438b7e5ddc8c.png)
+
+
+
+```python
+def number():
+    for num in range(1, 10001):
+        num_list.append(num//1000 + (num//100)%10 + (num//10)%10 + num % 10 + num)
+
+
+num_list = []
+number()
+cnt = 0
+for i in range(1, 10001):
+    if i not in num_list:
+        print(i)
+        cnt += 1
+
+print(cnt) # 983 개
+```
+
+
+
+## 한수
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/81058666-d9d03500-8f09-11ea-9c59-a0fd0aa59e80.png)
+
+
+
+```python
+def hansu(num):
+    cnt = 0
+    if num == 1000: cnt = 144
+    # 이 부분에서 num > 100: 으로해서 자꾸 틀림
+    elif num >= 100:
+        cnt += 99
+        for i in range(100, num+1):
+            a = i // 100
+            b = (i // 10) % 10
+            c = i % 10
+            if a - b == b - c:
+                cnt += 1
+    else:
+        cnt = num
+
+    return cnt
+
+for _ in range(int(input())):
+    N = int(input())
+    print(hansu(N))
 ```
 
 
