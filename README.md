@@ -64,11 +64,6 @@
 | 1110.더하기 사이클          [<문제보기>](#더하기-사이클)     | BOJ       |                           |
 | 13458.시험 감독                [<문제보기>](#시험-감독)      | BOJ       |                           |
 | 4673.숫자 세기                  [<문제보기>](#셀프-넘버)     | BOJ       |                           |
-<<<<<<< HEAD
-=======
-| 2178.미로 탐색                  [<문제보기>](#미로-탐색)     | BOJ       | BFS                       |
->>>>>>> 2b4d779fbd300a3f54a94d02fe37bd31532750b1
-
 [BOJ12100]: https://www.acmicpc.net/problem/12100
 [BOJ14503]: https://www.acmicpc.net/problem/14503
 [BOJ16235]: https://www.acmicpc.net/problem/16235
@@ -100,7 +95,9 @@
 
 
 
-## 단지번호붙이기 [목록](#목록)
+## 단지번호붙이기 
+
+[목록](#목록)
 
 ![image](https://user-images.githubusercontent.com/52685247/74249787-10dce300-4d2d-11ea-8f2d-ce57f7f5855b.png)
 
@@ -1209,6 +1206,60 @@ for _ in range(m):
 
 print(bfs(start))
 ```
+
+
+
+
+
+## 빗물
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/80913535-37d11100-8d80-11ea-9d67-84097f6a02e2.png)
+
+
+
+```python
+# 왼쪽에 벽이 있고 오른쪽에 벽이 있으면 물을 채울 수 있다고 생각(벽이니까 바닥과 연결되어 있음)
+# + 왼쪽 오른쪽 같이 탐색하는거로 간단하게 구현할 수 있을까?
+def left(a, b):
+    while b >= 0:
+        if not board[a][b]:
+            b -= 1
+            continue
+        elif board[a][b]:
+            return 1
+    return False
+
+def right(a, b):
+    while b < x:
+        if not board[a][b]:
+            b += 1
+            continue
+        elif board[a][b]:
+            return 1
+    return False
+
+for _ in range(int(input())):
+    y, x = map(int, input().split())
+    arr = list(map(int, input().split()))
+    board = [list(0 for _ in range(x)) for _ in range(y)]
+    for i in range(x):
+        for j in range(arr[i]):
+            board[j][i] = 1
+    
+    cnt = 0
+    for i in range(y):
+        for j in range(x):
+            if not board[i][j]:
+                score = left(i, j) + right(i, j)
+                if score == 2:
+                    cnt += 1
+
+    print(cnt)
+```
+
+
 
 
 
