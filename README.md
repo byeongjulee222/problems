@@ -64,11 +64,6 @@
 | 1110.더하기 사이클          [<문제보기>](#더하기-사이클)     | BOJ       |                           |
 | 13458.시험 감독                [<문제보기>](#시험-감독)      | BOJ       |                           |
 | 4673.숫자 세기                  [<문제보기>](#셀프-넘버)     | BOJ       |                           |
-<<<<<<< HEAD
-=======
-| 2178.미로 탐색                  [<문제보기>](#미로-탐색)     | BOJ       | BFS                       |
->>>>>>> 2b4d779fbd300a3f54a94d02fe37bd31532750b1
-
 [BOJ12100]: https://www.acmicpc.net/problem/12100
 [BOJ14503]: https://www.acmicpc.net/problem/14503
 [BOJ16235]: https://www.acmicpc.net/problem/16235
