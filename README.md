@@ -64,6 +64,8 @@
 | 1110.더하기 사이클          [<문제보기>](#더하기-사이클)     | BOJ       |                           |
 | 13458.시험 감독                [<문제보기>](#시험-감독)      | BOJ       |                           |
 | 4673.숫자 세기                  [<문제보기>](#셀프-넘버)     | BOJ       |                           |
+| 1065.한수                          [<문제보기>](#한수)       | BOJ       |                           |
+| 4344.평균은 넘겠지          [<문제보기>](#평균은-넘겠지)     | BOJ       |                           |
 [BOJ12100]: https://www.acmicpc.net/problem/12100
 [BOJ14503]: https://www.acmicpc.net/problem/14503
 [BOJ16235]: https://www.acmicpc.net/problem/16235
@@ -2108,6 +2110,37 @@ for _ in range(int(input())):
     N = int(input())
     print(hansu(N))
 ```
+
+
+
+## 평균은 넘겠지
+
+[목록](#목록)
+
+![image](https://user-images.githubusercontent.com/52685247/81199875-3280fa00-8ffe-11ea-9314-9b96422e5387.png)
+
+
+
+```python
+N = int(input())
+for i in range(N):
+    arr = list(map(int, input().split()))
+    num = arr[0]
+    lst = arr[1:]
+    avg_score = sum(lst)//num
+    cnt = 0
+    for student in lst:
+        if student > avg_score:
+            cnt += 1
+    ans = float(cnt/num*100)
+    print('{0:0.3f}%'.format(ans))
+```
+
+
+
+
+
+
 
 
 

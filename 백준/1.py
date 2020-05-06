@@ -1,26 +1,12 @@
-def gapInsertionSort(x, start, gap):
-    for target in range(start+gap, len(x), gap):
-        val = x[target]
-        i = target
-        while i > start:
-            if x[i-gap] > val:
-                x[i] = x[i-gap]
-            else:
-                break
-            i -= gap
-        x[i] = val
-
-def shellSort(x):
-    gap = len(x) // 2
-    while gap > 0:
-        for start in range(gap):
-            gapInsertionSort(x, start, gap)
-        gap = gap // 2
-
-lst = []
-for _ in range(int(input())):
-    lst.append(int(input()))
-
-shellSort(lst)
-for i in lst:
-    print(i)
+N = int(input())
+for i in range(N):
+    arr = list(map(int, input().split()))
+    num = arr[0]
+    lst = arr[1:]
+    avg_score = sum(lst)//num
+    cnt = 0
+    for student in lst:
+        if student > avg_score:
+            cnt += 1
+    ans = float(cnt/num*100)
+    print('{0:0.3f}%'.format(ans))
