@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60fcb3ee-1b58-43c0-9e22-4eac457721b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/problems.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/problems.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1486_장훈이의 높은 선반.py" beforeDir="false" afterPath="$PROJECT_DIR$/1486_장훈이의 높은 선반.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/백준/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/백준/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/백준/.idea/백준.iml" beforeDir="false" afterPath="$PROJECT_DIR$/백준/.idea/백준.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/백준/14719_빗물.py" beforeDir="false" afterPath="$PROJECT_DIR$/백준/14719_빗물.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/백준/2667_단지번호붙이기 OK.py" beforeDir="false" afterPath="$PROJECT_DIR$/백준/2667_단지번호붙이기 OK.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/백준/txt/14719_빗물.txt" beforeDir="false" afterPath="$PROJECT_DIR$/백준/txt/14719_빗물.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/백준/txt/bj_2667.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,19 +23,36 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.1486_장훈이의 높은 선반">
+  <component name="RunManager" selected="Python.10845_큐큐">
+    <configuration name="10845_큐큐" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="problems" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/백준/txt" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/백준/txt/10845_큐큐.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="14719_빗물" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="problems" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -111,9 +120,11 @@
       <item itemvalue="Python.aaaa" />
       <item itemvalue="Python.14719_빗물" />
       <item itemvalue="Python.1486_장훈이의 높은 선반" />
+      <item itemvalue="Python.10845_큐큐" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.10845_큐큐" />
         <item itemvalue="Python.1486_장훈이의 높은 선반" />
         <item itemvalue="Python.14719_빗물" />
         <item itemvalue="Python.aaaa" />
@@ -134,25 +145,29 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="744" height="267" key="GridCell.Tab.0.bottom" timestamp="1600270353797">
+    <state x="929" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600270713185">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="744" height="267" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600270353797" />
-    <state width="744" height="267" key="GridCell.Tab.0.center" timestamp="1600270353797">
+    <state x="929" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1600270713185" />
+    <state width="822" height="269" key="GridCell.Tab.0.bottom" timestamp="1600271337450">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="744" height="267" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600270353797" />
-    <state width="744" height="267" key="GridCell.Tab.0.left" timestamp="1600270353797">
+    <state width="822" height="269" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1600271337450" />
+    <state width="822" height="269" key="GridCell.Tab.0.center" timestamp="1600271337450">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="744" height="267" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600270353797" />
-    <state width="744" height="267" key="GridCell.Tab.0.right" timestamp="1600270353797">
+    <state width="822" height="269" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1600271337450" />
+    <state width="822" height="269" key="GridCell.Tab.0.left" timestamp="1600271337450">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="744" height="267" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600270353797" />
-    <state x="555" y="54" key="SettingsEditor" timestamp="1599524125060">
+    <state width="822" height="269" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1600271337450" />
+    <state width="822" height="269" key="GridCell.Tab.0.right" timestamp="1600271337450">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="555" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599524125060" />
+    <state width="822" height="269" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1600271337450" />
+    <state x="555" y="54" key="SettingsEditor" timestamp="1600270806926">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="555" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1600270806926" />
   </component>
 </project>
