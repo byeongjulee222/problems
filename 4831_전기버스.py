@@ -29,7 +29,7 @@ import sys; sys.stdin = open("txt/4831_electro_bus.txt", "r")
 T = int(input())
 
 for tc in range(1, T+1):
-    K, N, M  = map(int, input().split())
+    K, N, M = map(int, input().split())
     arr = list(map(int, input().split()))
 
     location = cnt = 0
