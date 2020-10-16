@@ -50,49 +50,76 @@ import sys; sys.stdin = open("txt/2667_단지 번호붙이기.txt")
 from collections import deque
 
 
-def bfs(r, c):
-    global visit, cnt
-    visit[r][c] = True
+# def bfs(r, c):
+#     global visit, cnt
+#     visit[r][c] = True
+#
+#     q = deque()
+#     q.append((r, c))
+#     while q:
+#         r, c = q.popleft()
+#         dir = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+#         for i in range(4):
+#             nr, nc = r + dir[i][0], c + dir[i][1]
+#             if 0 <= nr < N and 0 <= nc < N:
+#                 if not visit[nr][nc] and arr[nr][nc] == 1:
+#                     q.append((nr, nc))
+#                     cnt += 1
+#                     visit[nr][nc] = True
+#
+#     return cnt
+#
+# res = []
+# arr = []
+# N = int(input())
+# visit = [[False]*N for _ in range(N)]
+# # print(visit)
+# for row in range(N):
+#     arr.append(list(map(int, input())))
+# # print(arr)
+#
+# cnt = 1
+# for i in range(N):
+#     for j in range(N):
+#         if not visit[i][j] and arr[i][j] == 1:
+#             res.append(bfs(i, j))
+#             cnt = 1
+#
+# print(len(res))
+# res = sorted(res)
+# for i in res:
+#     print(i)
 
-    q = deque()
-    q.append((r, c))
-    while q:
-        r, c = q.popleft()
-        dir = [(-1, 0), (1, 0), (0, -1), (0, 1)]
-        for i in range(4):
-            nr, nc = r + dir[i][0], c + dir[i][1]
-            if 0 <= nr < N and 0 <= nc < N:
-                if not visit[nr][nc] and arr[nr][nc] == 1:
-                    q.append((nr, nc))
-                    cnt += 1
-                    visit[nr][nc] = True
 
+
+dx, dy = [0, 0, -1, 1], [-1, 1, 0, 0]
+
+def dfs(x, y):
+    global cnt
+    arr[x][y] = 0
+    visit[x][y] = True
+    for i in range(4):
+        nx, ny = x+dx[i], y+dy[i]
+        if 0 <= nx < N and 0 <= ny < N and not visit[nx][ny] and arr[nx][ny]:
+            cnt += 1
+            dfs(nx, ny)
     return cnt
 
-res = []
-arr = []
 N = int(input())
-visit = [[False]*N for _ in range(N)]
-# print(visit)
-for row in range(N):
-    arr.append(list(map(int, input())))
-# print(arr)
-
+arr = [list(map(int, input())) for _ in range(N)]
+res = []
+visit = [[False] * N for _ in range(N)]
 cnt = 1
 for i in range(N):
     for j in range(N):
-        if not visit[i][j] and arr[i][j] == 1:
-            res.append(bfs(i, j))
+        if arr[i][j] and not visit[i][j]:
+            res.append(dfs(i, j))
             cnt = 1
 
+res.sort()
 print(len(res))
-res = sorted(res)
 for i in res:
     print(i)
-
-
-
-
 
 
 
